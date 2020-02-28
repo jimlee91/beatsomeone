@@ -1,0 +1,64 @@
+///
+/// 텍스트가 길어질때, 박스 크기에 맞춰 텍스트틀 말줄임(...)으로 표시하는 믹스인
+/// @group Helpers
+/// @access public
+/// @example scss - 사용법
+///   .foo {
+///     @include ellipsis();
+///   }
+/// @example css - CSS 아웃풋
+///   .foo {
+///     white-space: nowrap;
+///     overflow: hidden;
+///     text-overflow: ellipsis;
+///   }
+///
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+///
+/// 박스 포지션 지정 믹스인
+/// @group Helpers
+/// @access public
+/// @output Description
+/// @param {string} $position [absolute] - 포지션 ( fixed, absolute, static, relative )
+/// @param {string} $top [auto] - top 값
+/// @param {string} $right [auto] - right 값
+/// @param {string} $bottom [auto] - bottom 값
+/// @param {string} $left [auto] - left 값
+/// @example scss - 사용법
+///   .foo {
+///     @include position($bottom: 10px, $right: 20px);
+///   }
+///   .bar {
+///     @include position($position: fixed, $top: 0px, $left: 0px)
+///   }
+/// @example css - CSS 아웃풋
+///   .foo {
+///     position: absolute;
+///     bottom: 10px;
+///     right: 20px;
+///   }
+///   .bar {
+///     position: fixed;
+///     top: 0px;
+///     left: 0px;
+///   }
+///
+@mixin position(
+  $position: absolute,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
