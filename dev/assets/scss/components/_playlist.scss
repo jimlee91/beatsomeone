@@ -14,6 +14,15 @@
         }
       }
     }
+    &.is-show-children {
+      // 하단 서브 앨범 토글 됐을때,
+      .playList__item--title {
+        background: #2b2c30;
+      }
+      .subPlayList .playList__itembox .playList__item {
+        background: #252629;
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;

@@ -116,6 +116,11 @@ const minImg = () => {
     .pipe(gulp.dest("dist/assets/images"));
 };
 
+//  이미지 용량 최소화
+const audio = () => {
+  return gulp.src("dev/assets/audio/**/*").pipe(gulp.dest("dist/assets/audio"));
+};
+
 const watchTask = () => {
   gulp.watch("dev/**/*.html", html).on("change", browserSync.reload);
   gulp.watch("dev/**/*.scss", scss).on("change", browserSync.reload);
@@ -132,8 +137,8 @@ const clean = () => {
 // css or scss 선택
 exports.default = gulp.series(
   clean,
-  gulp.parallel(html, scss, js, plugin, minImg),
+  gulp.parallel(html, scss, js, plugin, minImg, audio),
   gulp.parallel(server, watchTask)
 );
 
-exports.build = gulp.series(clean, html, scss, js, minImg, plugin);
+exports.build = gulp.series(clean, html, scss, js, minImg, plugin, audio);

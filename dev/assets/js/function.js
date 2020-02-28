@@ -69,6 +69,10 @@ $(function() {
       .parents(".playList__itembox")
       .find(".subPlayList .playList__itembox").length;
     $(this).toggleClass("active");
+    $(this)
+      .parents(".playList__itembox")
+      .toggleClass("is-show-children");
+
     if ($(this).hasClass("active")) {
       // active 일때,
       $(this)
