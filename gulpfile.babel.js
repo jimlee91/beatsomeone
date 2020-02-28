@@ -26,10 +26,12 @@ const server = () => {
 };
 
 const validateHtml = () => {
-  return gulp
-    .src(["dev/**/*.html", "!dev/include/**/*.html"])
-    .pipe(htmlValidator())
-    .pipe(htmlValidator.reporter());
+  return (
+    gulp
+      .src(["dev/**/*.html", "!dev/include/**/*.html"])
+      // .pipe(htmlValidator())
+      .pipe(htmlValidator.reporter())
+  );
 };
 
 const html = () => {

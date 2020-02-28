@@ -51,62 +51,9 @@
                   producers to collaborate with have never been easier.
                 </p>
               </header>
-
               <div class="playList">
-                <ul class="playList__list">
-                  <li class="playList__item">
-                    <div class="playList__item playList__item--title">
-                      <div class="col favorite">
-                        <button>즐겨찾기</button>
-                      </div>
-                      <div class="col name">
-                        <figure>
-                          <span class="playList__cover">
-                            <img
-                              src="https://via.placeholder.com/55x55"
-                              alt=""
-                            />
-                            <!-- new -->
-                            <i class="label new">N</i>
-                          </span>
-                          <figcaption>
-                            <h3 class="playList__title">
-                              Celebration (Buy 1 Get 3 FR... 1 Get 3 FR... 1 Get
-                              3 FR...
-                            </h3>
-                            <span class="playList__by">by Diamond Style</span>
-                          </figcaption>
-                        </figure>
-                        <button class="toggle-subList"></button>
-                      </div>
-                      <div class="col genre">
-                        <button class="active">Acoustic Folk</button>
-                        <button>Jazz</button>
-                        <button>Ambient</button>
-                        <button>Folk</button>
-                        <button>Singer-Songwriter</button>
-                      </div>
-                      <div class="col playbtn">
-                        <button>재생</button>
-                        <span class="timer">04:36</span>
-                      </div>
-                      <div class="col spectrum">
-                        <div id="waveform"></div>
-                      </div>
-                      <div class="col utils">
-                        <a href="" class="cart">
-                          장바구니
-                          <span class="tooltip">$20.00</span>
-                        </a>
-                        <a href="" class="download">다운로드</a>
-                        <a href="" class="shared">공유하기</a>
-                      </div>
-                      <div class="col more">
-                        <button>more</button>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                <!-- 아래 템플릿 문자열로 붙임 -->
+                <ul class="playList__list" id="playList__list"></ul>
               </div>
             </div>
           </section>
@@ -116,10 +63,123 @@
         <div class="wrap"></div>
       </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
     <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="./assets//js/build.js"></script>
     <!-- playlist item 템플릿 문자열 -->
-    <script type="text/template"></script>
+    <script type="text/template" id="playListTemplate">
+      <li class="playList__item" id="playList__item<%- item.id %>">
+        <div class="playList__item playList__item--title">
+          <div class="col favorite">
+            <button>즐겨찾기</button>
+          </div>
+          <div class="col name">
+            <figure>
+              <span class="playList__cover">
+                <img
+                  src="<%- item.coverImg %>"
+                  alt=""
+                />
+                <% if ( item.isNew === true ) { %>
+                <i class="label new">N</i>
+                <% } %>
+              </span>
+              <figcaption>
+                <h3 class="playList__title">
+                  <%- item.title %>
+                </h3>
+                <span class="playList__by"><%- item.singer %></span>
+              </figcaption>
+            </figure>
+            <button class="toggle-subList"></button>
+          </div>
+          <div class="col genre">
+            <% item.genres.forEach(function(genre, index){ %>
+            <button class="active"><%- genre %></button>
+            <% }) %>
+          </div>
+          <div class="col playbtn">
+            <button class="btn-play" data-action="playAction<%- item.id %>">재생</button>
+            <span class="timer">04:36</span>
+          </div>
+          <div class="col spectrum">
+            <div class="wave"></div>
+          </div>
+          <div class="col utils">
+            <a href="" class="cart">
+              장바구니
+              <span class="tooltip">$20.00</span>
+            </a>
+            <a href="" class="download">다운로드</a>
+            <a href="" class="shared">공유하기</a>
+          </div>
+          <div class="col more">
+            <button>more</button>
+          </div>
+        </div>
+      </li>
+    </script>
+
+    <script>
+      _.templateSettings.variable = "item";
+      var template = _.template($("#playListTemplate").text());
+      var playList = [
+        {
+          id: 1,
+          coverImg: "https://via.placeholder.com/55x55",
+          isNew: true,
+          title: "",
+          singer: "",
+          genres: [],
+          audioFile:
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+        },
+        {
+          id: 2,
+          coverImg: "https://via.placeholder.com/55x55",
+          isNew: true,
+          title: "",
+          singer: "",
+          genres: [],
+          audioFile:
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+        }
+      ];
+      var GLOBAL_ACTIONS = {}; // 각 액션들이 담기는 객체
+      var renderPlaylist = function(arr) {
+        _.each(arr, function(item, index) {
+          document
+            .getElementById("playList__list")
+            .insertAdjacentHTML("beforeend", template(item));
+          var audio = WaveSurfer.create({
+            container: "#playList__item" + item.id + " .wave",
+            waveColor: "#696969",
+            progressColor: "#c3ac45",
+            height: 90
+          });
+          audio.load(item.audioFile);
+          var actionName = "playAction" + item.id;
+          GLOBAL_ACTIONS[actionName] = audio;
+        });
+      };
+      renderPlaylist(playList);
+      document.addEventListener("DOMContentLoaded", function() {
+        [].forEach.call(document.querySelectorAll("[data-action]"), function(
+          el
+        ) {
+          el.addEventListener("click", function(e) {
+            var action = e.currentTarget.dataset.action;
+            if (action in GLOBAL_ACTIONS) {
+              e.preventDefault();
+              Object.keys(GLOBAL_ACTIONS).map(function(key) {
+                GLOBAL_ACTIONS[key].stop();
+              });
+              GLOBAL_ACTIONS[action].play();
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
