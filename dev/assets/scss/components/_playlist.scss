@@ -110,9 +110,18 @@
     .genre {
       @include flex();
       padding: 0 30px;
-      border-left: 1px solid $white-line;
       width: 280px;
       flex: none;
+      position: relative;
+      &:after {
+        content: "";
+        width: 1px;
+        height: 14px;
+        background: $white-line;
+        display: block;
+        @include position($left: 0, $top: 50%);
+        transform: translateY(-50%);
+      }
       button {
         font-size: 12px;
         border: 1px solid $color-white;
@@ -130,7 +139,16 @@
     .playbtn {
       @include flex();
       padding: 0 30px;
-      border-left: 1px solid $white-line;
+      position: relative;
+      &:after {
+        content: "";
+        width: 1px;
+        height: 14px;
+        background: $white-line;
+        display: block;
+        @include position($left: 0, $top: 50%);
+        transform: translateY(-50%);
+      }
       button {
         @include textIndet;
         transition: all 0.3s;
@@ -157,7 +175,16 @@
       @include flex();
       padding: 0 30px;
       margin-left: 30px;
-      border-left: 1px solid $white-line;
+      position: relative;
+      &:after {
+        content: "";
+        width: 1px;
+        height: 14px;
+        background: $white-line;
+        display: block;
+        @include position($left: 0, $top: 50%);
+        transform: translateY(-50%);
+      }
       a {
         @include textIndet;
         margin-right: 25px;
@@ -169,19 +196,28 @@
           height: 21px;
           background: url("../images/icon/cart.png") no-repeat center;
           position: relative;
+          overflow: initial;
           .tooltip {
-            font-size: 12px;
-            line-height: 24px;
-            background: #289099;
-            position: absolute;
-            display: inline-block;
-            text-indent: 0;
-            z-index: 2;
-            left: 0;
-            top: -30px;
-            color: $color-white;
             padding: 0 7px;
-            border-radius: 3px;
+            background: #289099;
+            color: $color-white;
+            bottom: 15px;
+            &:after {
+              content: "";
+              display: block;
+              @include position($bottom: -10px, $left: 50%);
+              transform: translateX(-50%);
+              width: 0;
+              height: 0;
+              border-top: 5px solid #289099;
+              border-bottom: 5px solid transparent;
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+            }
+          }
+          &:hover .tooltip {
+            opacity: 1;
+            bottom: 30px;
           }
         }
         &.download {
@@ -205,6 +241,48 @@
         width: 20px;
         height: 20px;
         background: url("../images/icon/more.png") no-repeat center;
+        position: relative;
+        overflow: initial;
+        .tooltip {
+          bottom: 15px;
+          width: 130px;
+          background: #2b2c30;
+          a {
+            display: block;
+            height: 0;
+            line-height: 40px;
+            overflow: hidden;
+            color: #9ea1a8;
+            transition: all 0.5s;
+            border-bottom: 1px solid #1b1a1f;
+            &:last-child {
+              border-bottom: 0;
+            }
+            &:hover {
+              color: $color-white;
+              background: #1c1d22;
+            }
+          }
+          &:after {
+            content: "";
+            display: block;
+            @include position($bottom: -10px, $left: 50%);
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-top: 5px solid #2b2c30;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+          }
+        }
+        &:hover .tooltip {
+          opacity: 1;
+          bottom: 30px;
+          a {
+            height: 40px;
+          }
+        }
       }
     }
   }

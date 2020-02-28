@@ -27,13 +27,13 @@ function setAudioInstance(item) {
     // 파일이 재생될때 계속 실행
     document.querySelector(
       "#playList__item" + item.id + " .current"
-    ).innerText = time_convert(parseInt(e, 10)) + " / ";
+    ).innerHTML = time_convert(parseInt(e, 10)) + " / ";
   });
   audio.on("ready", function(e) {
     // 파일이 로드가 다 됐을때,
     document.querySelector(
       "#playList__item" + item.id + " .duration"
-    ).innerText = time_convert(parseInt(audio.getDuration(), 10));
+    ).innerHTML = time_convert(parseInt(audio.getDuration(), 10));
   });
   audio.on("pause", function(e) {
     var actionTarget = "playAction" + item.id;
@@ -62,6 +62,21 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+function renderPlaylist(arr) {
+  _.each(arr, function(item, index) {
+    document
+      .getElementById("playList__list")
+      .insertAdjacentHTML("beforeend", template(item));
+
+    setAudioInstance(item);
+    if (item.subPlayList.length > 0) {
+      _.each(item.subPlayList, function(playList, index) {
+        setAudioInstance(playList);
+      });
+    }
+  });
+}
+
 $(function() {
   // 메인페이지: 서브 앨범 슬라이드 이벤트
   $(".toggle-subList").on("click", function() {
@@ -87,4 +102,26 @@ $(function() {
         .css("height", 0);
     }
   });
+
+  // 커스텀 셀렉트 옵션
+  $(".custom-select").on("click", function() {
+    $(this)
+      .siblings(".custom-select")
+      .removeClass("active")
+      .find(".options")
+      .hide();
+    $(this).toggleClass("active");
+    $(this)
+      .find(".options")
+      .toggle();
+  });
+});
+// 윈도우 스크롤 했을때,
+$(window).scroll(function() {
+  var t = $("html, body").scrollTop();
+  if (t > 10) {
+    $(".header").addClass("scrolled");
+  } else {
+    $(".header").removeClass("scrolled");
+  }
 });

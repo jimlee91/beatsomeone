@@ -2,6 +2,11 @@
   @include position($position: fixed, $top: 0px, $left: 0px);
   width: 100%;
   border-bottom: 1px solid $white-line;
+  transition: all 0.3s;
+  z-index: 1000;
+  &.scrolled {
+    background: #000;
+  }
   .wrap {
     height: 55px;
     @include flex();

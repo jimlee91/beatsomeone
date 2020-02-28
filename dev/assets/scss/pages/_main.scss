@@ -1,7 +1,7 @@
 .main {
   .main__section1 {
     background: url("../images/main-section1-visual.png") no-repeat center top;
-    background-size: cover;
+    background-size: 100% auto;
     min-height: 100vh;
   }
   .main__section1-title {
@@ -16,6 +16,20 @@
       opacity: 0.5;
       margin-top: 1em;
       font-weight: 300;
+    }
+  }
+
+  .switch {
+    margin-right: 30px;
+  }
+  .filter {
+    height: 100px;
+    @include flex($justify: center);
+    .custom-select {
+      margin: 0 30px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
