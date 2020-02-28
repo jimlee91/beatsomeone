@@ -1,0 +1,174 @@
+.playList {
+  .playList__list {
+  }
+
+  .playList__item {
+    @include flex();
+    width: 100%;
+    background: #1b1b1f;
+    padding: 0 10px;
+    .col {
+      flex: none;
+    }
+    .favorite {
+      width: 60px;
+      text-align: center;
+      button {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        @include textIndet;
+        background: url("../images/icon/favorite.png") no-repeat center;
+      }
+    }
+    .name {
+      padding: 0 20px;
+      @include flex();
+      figure {
+        @include flex();
+        margin-right: 1em;
+        .playList__cover {
+          width: 55px;
+          height: 55px;
+          flex: none;
+          position: relative;
+          margin-right: 30px;
+          img {
+            border-radius: 3px;
+          }
+          i {
+            @include position($top: -5px, $right: -5px);
+            z-index: 1;
+          }
+        }
+        figcaption {
+          width: 220px;
+          flex: none;
+          .playList__title {
+            @include ellipsis;
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .playList__by {
+            @include ellipsis;
+            font-size: 12px;
+            opacity: 0.3;
+            margin-top: 5px;
+            display: block;
+          }
+        }
+      }
+      .toggle-subList {
+        width: 24px;
+        height: 24px;
+        border: 1px solid $color-white;
+        background: url("../images/icon/arrow-top.png") no-repeat center;
+        opacity: 0.2;
+        border-radius: 50%;
+        transform: rotate(180deg);
+      }
+    }
+    .genre {
+      @include flex();
+      padding: 0 30px;
+      border-left: 1px solid $white-line;
+      width: 280px;
+      flex: none;
+      button {
+        font-size: 12px;
+        border: 1px solid $color-white;
+        color: $color-white;
+        padding: 0 8px;
+        line-height: 20px;
+        border-radius: 2em;
+        margin: 2px;
+        opacity: 0.3;
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+    .playbtn {
+      @include flex();
+      padding: 0 30px;
+      border-left: 1px solid $white-line;
+      button {
+        @include textIndet;
+        background: url("../images/icon/play.png") no-repeat center;
+        width: 35px;
+        height: 35px;
+        background-size: auto 100%;
+        opacity: 0.3;
+      }
+      .timer {
+        font-size: 12px;
+        margin-left: 30px;
+        color: #666666;
+      }
+    }
+    .spectrum {
+      flex: 1;
+
+      wave {
+        border-right: 0 !important;
+      }
+    }
+    .utils {
+      @include flex();
+      padding: 0 30px;
+      margin-left: 30px;
+      border-left: 1px solid $white-line;
+      a {
+        @include textIndet;
+        margin-right: 25px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.cart {
+          width: 24px;
+          height: 21px;
+          background: url("../images/icon/cart.png") no-repeat center;
+          position: relative;
+          .tooltip {
+            font-size: 12px;
+            line-height: 24px;
+            background: #289099;
+            position: absolute;
+            display: inline-block;
+            text-indent: 0;
+            z-index: 2;
+            left: 0;
+            top: -30px;
+            color: $color-white;
+            padding: 0 7px;
+            border-radius: 3px;
+          }
+        }
+        &.download {
+          width: 23px;
+          height: 17px;
+          background: url("../images/icon/download.png") no-repeat center;
+        }
+        &.shared {
+          width: 18px;
+          height: 18px;
+          background: url("../images/icon/shared.png") no-repeat center;
+        }
+      }
+    }
+    .more {
+      text-align: center;
+      padding: 0 20px;
+      button {
+        cursor: pointer;
+        @include textIndet;
+        width: 20px;
+        height: 20px;
+        background: url("../images/icon/more.png") no-repeat center;
+      }
+    }
+  }
+  .playList__item--title {
+    height: 90px;
+  }
+}

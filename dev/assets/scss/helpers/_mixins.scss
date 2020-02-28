@@ -115,3 +115,48 @@
     justify-content: $align;
   }
 }
+
+///
+/// 폰트 사이즈 믹스인
+/// @group Helpers
+/// @access public
+/// @param {number} $display - 폰트 크기( 1, 2, 3 )
+/// @param {size} $letterSpacing [1em] - 폰트 자간
+/// @param {Color} $color [#fff] - 폰트 색상
+/// @param {string} $style [flex-start] - 폰트 스타일( normal, italic )
+/// @param {size} $lineHeight [1em] - 행간 사이즈
+/// @param {number} $fontWeight [700] - 폰트 굵기
+///
+@mixin titleFont(
+  $display,
+  $letterSpacing: 0,
+  $color: #fff,
+  $style: normal,
+  $lineHeight: 1em,
+  $fontWeight: 700
+) {
+  letter-spacing: $letterSpacing;
+  color: $color;
+  font-style: $style;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  @if ($display == 1) {
+    font-size: 60px;
+  }
+  @if ($display == 2) {
+    font-size: 40px;
+  }
+  @if ($display == 3) {
+    font-size: 20px;
+  }
+}
+
+///
+/// 텍스트 숨기는 믹스인
+/// @group Helpers
+/// @access public
+///
+@mixin textIndet() {
+  text-indent: -9999px;
+  overflow: hidden;
+}

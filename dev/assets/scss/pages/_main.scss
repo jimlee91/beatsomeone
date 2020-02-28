@@ -2,5 +2,20 @@
   .main__section1 {
     background: url("../images/main-section1-visual.png") no-repeat center top;
     background-size: cover;
+    min-height: 100vh;
+  }
+  .main__section1-title {
+    padding: 180px 80px 0;
+    margin-bottom: 110px;
+    h1 {
+      @include titleFont($display: 1, $fontWeight: 900);
+    }
+    p {
+      font-size: 20px;
+      line-height: 1.5em;
+      opacity: 0.5;
+      margin-top: 1em;
+      font-weight: 300;
+    }
   }
 }

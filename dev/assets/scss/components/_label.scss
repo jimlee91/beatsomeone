@@ -1,0 +1,14 @@
+.label {
+  &.new {
+    background: #3873d3;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 300;
+    font-style: normal;
+    width: 15px;
+    line-height: 15px;
+    text-align: center;
+  }
+}

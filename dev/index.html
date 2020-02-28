@@ -7,7 +7,7 @@
     <meta property="og:description" content="디스크립션" />
     <meta property="og:title" content="타이틀" />
     <link
-      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,900,900i&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
@@ -41,13 +41,85 @@
 
       <div class="container">
         <div class="main">
-          <section class="main__section1"></section>
+          <section class="main__section1">
+            <div class="wrap">
+              <header class="main__section1-title">
+                <h1>HOLIDAY GIVEAWAY</h1>
+                <p>
+                  Finding incredible music & connecting with amazing artists
+                  and<br />
+                  producers to collaborate with have never been easier.
+                </p>
+              </header>
+
+              <div class="playList">
+                <ul class="playList__list">
+                  <li class="playList__item">
+                    <div class="playList__item playList__item--title">
+                      <div class="col favorite">
+                        <button>즐겨찾기</button>
+                      </div>
+                      <div class="col name">
+                        <figure>
+                          <span class="playList__cover">
+                            <img
+                              src="https://via.placeholder.com/55x55"
+                              alt=""
+                            />
+                            <!-- new -->
+                            <i class="label new">N</i>
+                          </span>
+                          <figcaption>
+                            <h3 class="playList__title">
+                              Celebration (Buy 1 Get 3 FR... 1 Get 3 FR... 1 Get
+                              3 FR...
+                            </h3>
+                            <span class="playList__by">by Diamond Style</span>
+                          </figcaption>
+                        </figure>
+                        <button class="toggle-subList"></button>
+                      </div>
+                      <div class="col genre">
+                        <button class="active">Acoustic Folk</button>
+                        <button>Jazz</button>
+                        <button>Ambient</button>
+                        <button>Folk</button>
+                        <button>Singer-Songwriter</button>
+                      </div>
+                      <div class="col playbtn">
+                        <button>재생</button>
+                        <span class="timer">04:36</span>
+                      </div>
+                      <div class="col spectrum">
+                        <div id="waveform"></div>
+                      </div>
+                      <div class="col utils">
+                        <a href="" class="cart">
+                          장바구니
+                          <span class="tooltip">$20.00</span>
+                        </a>
+                        <a href="" class="download">다운로드</a>
+                        <a href="" class="shared">공유하기</a>
+                      </div>
+                      <div class="col more">
+                        <button>more</button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-
       <footer class="footer">
         <div class="wrap"></div>
       </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="./assets//js/build.js"></script>
+    <!-- playlist item 템플릿 문자열 -->
+    <script type="text/template"></script>
   </body>
 </html>
