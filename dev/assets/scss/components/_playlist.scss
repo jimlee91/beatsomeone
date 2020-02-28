@@ -99,7 +99,12 @@
         height: 35px;
         background-size: auto 100%;
         opacity: 0.3;
+        &.playing {
+          background: url("../images/icon/pause.png") no-repeat center;
+          background-size: auto 100%;
+        }
       }
+
       .timer {
         font-size: 12px;
         margin-left: 30px;

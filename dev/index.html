@@ -144,6 +144,26 @@
           genres: [],
           audioFile:
             "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+        },
+        {
+          id: 3,
+          coverImg: "https://via.placeholder.com/55x55",
+          isNew: true,
+          title: "",
+          singer: "",
+          genres: [],
+          audioFile:
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+        },
+        {
+          id: 4,
+          coverImg: "https://via.placeholder.com/55x55",
+          isNew: true,
+          title: "",
+          singer: "",
+          genres: [],
+          audioFile:
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
         }
       ];
       var GLOBAL_ACTIONS = {}; // 각 액션들이 담기는 객체
@@ -161,6 +181,19 @@
           audio.load(item.audioFile);
           var actionName = "playAction" + item.id;
           GLOBAL_ACTIONS[actionName] = audio;
+
+          audio.on("play", function(e) {
+            var actionTarget = "playAction" + item.id;
+            document
+              .querySelector("[data-action=" + actionTarget + "]")
+              .classList.add("playing");
+          });
+          audio.on("pause", function(e) {
+            var actionTarget = "playAction" + item.id;
+            document
+              .querySelector("[data-action=" + actionTarget + "]")
+              .classList.remove("playing");
+          });
         });
       };
       renderPlaylist(playList);
@@ -173,9 +206,11 @@
             if (action in GLOBAL_ACTIONS) {
               e.preventDefault();
               Object.keys(GLOBAL_ACTIONS).map(function(key) {
-                GLOBAL_ACTIONS[key].stop();
+                if (GLOBAL_ACTIONS[key] !== GLOBAL_ACTIONS[action]) {
+                  GLOBAL_ACTIONS[key].stop();
+                }
               });
-              GLOBAL_ACTIONS[action].play();
+              GLOBAL_ACTIONS[action].playPause();
             }
           });
         });
