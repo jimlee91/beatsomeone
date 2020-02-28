@@ -63,13 +63,13 @@
         <div class="wrap"></div>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="./assets/plugins/jquery.js"></script>
+    <script src="./assets/plugins/underscore.js"></script>
     <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="./assets//js/build.js"></script>
     <!-- playlist item 템플릿 문자열 -->
     <script type="text/template" id="playListTemplate">
-      <li class="playList__item" id="playList__item<%- item.id %>">
+      <li class="playList__itembox" id="playList__item<%- item.id %>">
         <div class="playList__item playList__item--title">
           <div class="col favorite">
             <button>즐겨찾기</button>
@@ -86,13 +86,16 @@
                 <% } %>
               </span>
               <figcaption>
-                <h3 class="playList__title">
+                <h3 class="">
                   <%- item.title %>
                 </h3>
                 <span class="playList__by"><%- item.singer %></span>
               </figcaption>
             </figure>
+            <% if ( item.subPlayList.length > 0 ) { %>
+            <!-- 서브리스트 토글 버튼 -->
             <button class="toggle-subList"></button>
+            <% } %>
           </div>
           <div class="col genre">
             <% item.genres.forEach(function(genre, index){ %>
@@ -101,7 +104,10 @@
           </div>
           <div class="col playbtn">
             <button class="btn-play" data-action="playAction<%- item.id %>">재생</button>
-            <span class="timer">04:36</span>
+            <span class="timer">
+              <span class="current"></span>
+              <span class="duration">0:00</span>
+            </span>
           </div>
           <div class="col spectrum">
             <div class="wave"></div>
@@ -118,6 +124,63 @@
             <button>more</button>
           </div>
         </div>
+        <!-- 서브 앨범들 -->
+        <ul class="subPlayList">
+          <% item.subPlayList.forEach(function(playList, index) { %>
+          <li id="playList__item<%- playList.id %>" class="playList__itembox">
+            <div class="playList__item playList__item--sub" id="">
+              <div class="col favorite">
+                <button>즐겨찾기</button>
+              </div>
+              <div class="col name">
+                <figure>
+                  <span class="playList__cover">
+                    <img
+                      src="<%- playList.coverImg %>"
+                      alt=""
+                    />
+                    <% if ( playList.isNew === true ) { %>
+                    <i class="label new">N</i>
+                    <% } %>
+                  </span>
+                  <figcaption>
+                    <h3 class="">
+                      <%- playList.title %>
+                    </h3>
+                    <span class="playList__by"><%- playList.singer %></span>
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="col genre">
+                <% playList.genres.forEach(function(genre, index){ %>
+                <button class="active"><%- genre %></button>
+                <% }) %>
+              </div>
+              <div class="col playbtn">
+                <button class="btn-play" data-action="playAction<%- playList.id %>">재생</button>
+                <span class="timer">
+                  <span class="current"></span>
+                  <span class="duration">0:00</span>
+                </span>
+              </div>
+              <div class="col spectrum">
+                <div class="wave"></div>
+              </div>
+              <div class="col utils">
+                <a href="" class="cart">
+                  장바구니
+                  <span class="tooltip">$20.00</span>
+                </a>
+                <a href="" class="download">다운로드</a>
+                <a href="" class="shared">공유하기</a>
+              </div>
+              <div class="col more">
+                <button>more</button>
+              </div>
+            </div>
+          </li>
+          <% }) %>
+        </div>
       </li>
     </script>
 
@@ -133,7 +196,39 @@
           singer: "",
           genres: [],
           audioFile:
-            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3",
+          subPlayList: [
+            {
+              id: 8,
+              coverImg: "https://via.placeholder.com/55x55",
+              isNew: true,
+              title: "",
+              singer: "",
+              genres: [],
+              audioFile:
+                "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+            },
+            {
+              id: 13,
+              coverImg: "https://via.placeholder.com/55x55",
+              isNew: true,
+              title: "",
+              singer: "",
+              genres: [],
+              audioFile:
+                "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+            },
+            {
+              id: 24,
+              coverImg: "https://via.placeholder.com/55x55",
+              isNew: true,
+              title: "",
+              singer: "",
+              genres: [],
+              audioFile:
+                "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+            }
+          ]
         },
         {
           id: 2,
@@ -143,7 +238,8 @@
           singer: "",
           genres: [],
           audioFile:
-            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3",
+          subPlayList: []
         },
         {
           id: 3,
@@ -153,7 +249,8 @@
           singer: "",
           genres: [],
           audioFile:
-            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3",
+          subPlayList: []
         },
         {
           id: 4,
@@ -163,58 +260,26 @@
           singer: "",
           genres: [],
           audioFile:
-            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3"
+            "http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3",
+          subPlayList: []
         }
       ];
-      var GLOBAL_ACTIONS = {}; // 각 액션들이 담기는 객체
+
       var renderPlaylist = function(arr) {
         _.each(arr, function(item, index) {
           document
             .getElementById("playList__list")
             .insertAdjacentHTML("beforeend", template(item));
-          var audio = WaveSurfer.create({
-            container: "#playList__item" + item.id + " .wave",
-            waveColor: "#696969",
-            progressColor: "#c3ac45",
-            height: 90
-          });
-          audio.load(item.audioFile);
-          var actionName = "playAction" + item.id;
-          GLOBAL_ACTIONS[actionName] = audio;
 
-          audio.on("play", function(e) {
-            var actionTarget = "playAction" + item.id;
-            document
-              .querySelector("[data-action=" + actionTarget + "]")
-              .classList.add("playing");
-          });
-          audio.on("pause", function(e) {
-            var actionTarget = "playAction" + item.id;
-            document
-              .querySelector("[data-action=" + actionTarget + "]")
-              .classList.remove("playing");
-          });
+          setAudioInstance(item);
+          if (item.subPlayList.length > 0) {
+            _.each(item.subPlayList, function(playList, index) {
+              setAudioInstance(playList);
+            });
+          }
         });
       };
       renderPlaylist(playList);
-      document.addEventListener("DOMContentLoaded", function() {
-        [].forEach.call(document.querySelectorAll("[data-action]"), function(
-          el
-        ) {
-          el.addEventListener("click", function(e) {
-            var action = e.currentTarget.dataset.action;
-            if (action in GLOBAL_ACTIONS) {
-              e.preventDefault();
-              Object.keys(GLOBAL_ACTIONS).map(function(key) {
-                if (GLOBAL_ACTIONS[key] !== GLOBAL_ACTIONS[action]) {
-                  GLOBAL_ACTIONS[key].stop();
-                }
-              });
-              GLOBAL_ACTIONS[action].playPause();
-            }
-          });
-        });
-      });
     </script>
   </body>
 </html>

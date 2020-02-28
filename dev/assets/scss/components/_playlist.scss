@@ -2,11 +2,34 @@
   .playList__list {
   }
 
+  .playList__itembox {
+    margin-bottom: 1px;
+    &.playing {
+      .playList__item {
+        background: #2b2c30;
+        .btn-play {
+          background: url("../images/icon/pause.png") no-repeat center;
+          background-size: auto 100%;
+          opacity: 1;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .playList__item {
     @include flex();
-    width: 100%;
     background: #1b1b1f;
+    transition: all 0.3s;
+    width: 100%;
     padding: 0 10px;
+    &:hover {
+      background: #252629;
+    }
+
     .col {
       flex: none;
     }
@@ -23,6 +46,7 @@
     }
     .name {
       padding: 0 20px;
+      width: 385px;
       @include flex();
       figure {
         @include flex();
@@ -66,6 +90,12 @@
         opacity: 0.2;
         border-radius: 50%;
         transform: rotate(180deg);
+        transition: all 0.3s;
+        &.active {
+          transform: rotate(0);
+          opacity: 1;
+          border: 0;
+        }
       }
     }
     .genre {
@@ -94,17 +124,13 @@
       border-left: 1px solid $white-line;
       button {
         @include textIndet;
+        transition: all 0.3s;
         background: url("../images/icon/play.png") no-repeat center;
         width: 35px;
         height: 35px;
         background-size: auto 100%;
         opacity: 0.3;
-        &.playing {
-          background: url("../images/icon/pause.png") no-repeat center;
-          background-size: auto 100%;
-        }
       }
-
       .timer {
         font-size: 12px;
         margin-left: 30px;
@@ -173,7 +199,16 @@
       }
     }
   }
-  .playList__item--title {
+  .playList__item {
     height: 90px;
+  }
+
+  .subPlayList {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+    .playList__itembox {
+      margin: 0;
+    }
   }
 }
