@@ -149,42 +149,24 @@ a:hover {
 html,
 body {
   font-size: 16px;
-  color: #333;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  font-family: $default-font;
+  background: #000;
 }
 .wrapper {
   width: 100%;
   margin: 0 auto;
 }
 .wrap {
-  width: 100%;
-  max-width: 1220px;
+  width: 1420px;
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;
   padding: 0 10px;
 }
 
-.float-left {
-  float: left;
-}
-.float-right {
-  float: right;
-}
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.blind {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  opacity: 0;
+*[hidden] {
+  display: none !important;
 }
 .text-center {
   text-align: center !important;
@@ -194,14 +176,4 @@ body {
 }
 .text-right {
   text-align: right !important;
-}
-.text-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-.d-flex {
-  display: flex;
-  flex-wrap: wrap;
 }

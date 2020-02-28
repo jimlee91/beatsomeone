@@ -1,0 +1,56 @@
+.header {
+  @include position($position: fixed, $top: 0px, $left: 0px);
+  width: 100%;
+  border-bottom: 1px solid $white-line;
+  .wrap {
+    height: 55px;
+    @include flex();
+  }
+
+  .header__gnb {
+    margin-left: auto;
+    @include flex();
+  }
+
+  .header__search {
+    position: relative;
+    input {
+      width: 175px;
+      height: 25px;
+      color: #fff;
+      background: $white-line;
+      border-radius: 2em;
+      font-size: 12px;
+      padding: 0 35px 0 10px;
+      transition: all 0.3s;
+      &:focus {
+        width: 190px;
+      }
+    }
+    button {
+      @include position($top: 0, $right: 5px);
+      background: url("../images/icon/search.png") no-repeat center center;
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+    }
+  }
+  .header__nav {
+    @include flex();
+    a {
+      font-size: 13px;
+      color: #fff;
+      padding: 0 1em;
+      border-left: 1px solid $white-line;
+
+      &.header__cart {
+        background: url("../images/icon/cart.png") no-repeat 1em center;
+        padding-left: 2.5em;
+        background-size: auto 1em;
+      }
+      &:first-child {
+        border-left: 0;
+      }
+    }
+  }
+}

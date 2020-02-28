@@ -24,7 +24,6 @@
 /// 박스 포지션 지정 믹스인
 /// @group Helpers
 /// @access public
-/// @output Description
 /// @param {string} $position [absolute] - 포지션 ( fixed, absolute, static, relative )
 /// @param {string} $top [auto] - top 값
 /// @param {string} $right [auto] - right 값
@@ -61,4 +60,58 @@
   bottom: $bottom;
   left: $left;
   right: $right;
+}
+
+///
+/// Flex 박스 정렬 믹스인
+/// @group Helpers
+/// @access public
+/// @param {string} $direction [row] - 정렬 방향
+/// @param {string} $align [center] - 세로 정렬
+/// @param {string} $justify [flex-start] - 가로 정렬
+/// @example scss - 사용법
+///   .foo {
+///     @include flex();
+///   }
+///   .bar {
+///     @include flex($direction: column)
+///   }
+///   .zoo {
+///     @include flex($align: center, $jusify: center)
+///   }
+/// @example css - CSS 아웃풋
+///   .foo {
+///     display: flex;
+///     display-direction: row;
+///     flex-wrap: wrap;
+///     align-items: center;
+///     justify-content: flex-start
+///   }
+///   .bar {
+///     display: flex;
+///     display-direction: column;
+///     flex-wrap: wrap;
+///     align-items: flex-start;
+///     justify-content: center;
+///   }
+///   .zoo {
+///     display: flex;
+///     display-direction: row;
+///     flex-wrap: wrap;
+///     align-items: center;
+///     justify-content: center;
+///   }
+///
+@mixin flex($direction: row, $align: center, $justify: flex-start) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: $direction;
+  @if ($direction == row) {
+    align-items: $align;
+    justify-content: $justify;
+  }
+  @if ($direction == column) {
+    align-items: $justify;
+    justify-content: $align;
+  }
 }

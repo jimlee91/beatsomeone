@@ -1,0 +1,21 @@
+///
+/// 컬러 변수
+/// @group Color
+/// @access public
+/// @type Color
+///
+$white-line: rgba(255, 255, 255, 0.2);
+///
+/// 컬러 변수
+/// @group Color
+/// @access public
+/// @type Color
+///
+$color2: #f00;
+
+/// 기본 폰트체
+/// @group Typography
+/// @type Font
+
+$default-font: "Raleway", -apple-system, system-ui, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
