@@ -1,0 +1,5 @@
+.playList__more {
+  font-size: 1rem;
+  color: $color-white;
+  @include borderLikeButton($padding: 15px 50px);
+}

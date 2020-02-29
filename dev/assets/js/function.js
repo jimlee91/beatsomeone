@@ -78,6 +78,15 @@ function renderPlaylist(arr) {
 }
 
 $(function() {
+  // 메인 trend Slider
+  $(".trending__slider .slider").slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    dots: true
+  });
   // 메인페이지: 서브 앨범 슬라이드 이벤트
   $(".toggle-subList").on("click", function() {
     var itemLength = $(this)

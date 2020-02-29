@@ -160,3 +160,28 @@
   text-indent: -9999px;
   overflow: hidden;
 }
+
+///
+/// 볼더가 잇는 텍스트
+/// @group Helpers
+/// @access public
+/// @param {padding} $padding [15px 30px] - 상하좌우 패딩 값
+/// @example scss - 사용법
+///   .foo {
+///     @include borderLikeButton();
+///   }
+/// @example css - CSS 아웃풋
+///   .foo {
+///     border: 1px solid #fff;
+///     border-radius: 2em;
+///     padding: 15px 30px;
+///     display: inline-block;
+///   }
+///
+///
+@mixin borderLikeButton($padding: 15px 30px) {
+  border: 1px solid $color-white;
+  border-radius: 2em;
+  padding: $padding;
+  display: inline-block;
+}
