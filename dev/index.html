@@ -16,7 +16,34 @@
   </head>
   <body>
     <div class="wrapper">
-      @@include('./include/header.html')
+      <!-- @@include('./include/header.html') -->
+
+      <header class="header">
+        <div class="wrap">
+          <h1 class="header__logo">
+            <a href="/"><img src="./assets//images/logo.png" alt=""/></a>
+          </h1>
+          <div class="header__gnb">
+            <div class="header__search">
+              <form action="/">
+                <input type="text" />
+                <button></button>
+              </form>
+            </div>
+            <nav class="header__nav">
+              <a href="">HOME</a>
+              <a href="">Free Beats</a>
+              <a href="">Pricing</a>
+              <a href="">Login</a>
+              <a href="">Sign In</a>
+              <a href="" class="header__cart">($0.00)</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!--  -->
+
       <div class="container">
         <div class="main">
           <section class="main__section1">
@@ -289,7 +316,112 @@
                 </a>
               </div>
             </div>
-            @@include('./include/footer.html')
+            <!-- @@include('./include/footer.html') -->
+            <footer class="footer">
+              <div class="wrap">
+                <div class="footer__top">
+                  <div class="footer__logo">
+                    <a href="/"><img src="./assets/images/logo.png" alt=""/></a>
+                  </div>
+                  <div class="footer__sns sns">
+                    <a href="" class="sns__insta"
+                      ><img
+                        src="./assets/images/icon/instagram.png"
+                        alt="인스타그렘으로 바로가기"
+                    /></a>
+                    <a href="" class="sns__insta"
+                      ><img
+                        src="./assets/images/icon/youtube.png"
+                        alt="유튜브로 바로가기"
+                    /></a>
+                    <a href="" class="sns__insta"
+                      ><img
+                        src="./assets/images/icon/facebook.png"
+                        alt="페이스북으로 바로가기"
+                    /></a>
+                    <a href="" class="sns__insta"
+                      ><img
+                        src="./assets/images/icon/twitter.png"
+                        alt="트위터로 바로가기"
+                    /></a>
+                  </div>
+                </div>
+                <div class="footer__content">
+                  <div class="footer__subLink">
+                    <div class="row">
+                      <h3>
+                        <a href="/">BEAT SOMEONE</a>
+                      </h3>
+                      <ul>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">Merch</a></li>
+                        <li><a href="">Blog</a></li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <h3>
+                        <a href="/">FEATURES</a>
+                      </h3>
+                      <ul>
+                        <li><a href="">Selling Music</a></li>
+                        <li><a href="">Pro Page</a></li>
+                        <li><a href="">Blaze Player</a></li>
+                        <li><a href="">Monetization</a></li>
+                        <li><a href="">Testimonials</a></li>
+                      </ul>
+                    </div>
+                    <div class="row">
+                      <h3>
+                        <a href="/">SUPPORT</a>
+                      </h3>
+                      <ul>
+                        <li><a href="">Help</a></li>
+                        <li><a href="">Cookie Policy</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Copyright Complaint</a></li>
+                        <li><a href="">Terms & Conditions</a></li>
+                        <li><a href="">Contact Us</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="footer__subscribe">
+                    <h3>BEAT SOMEONE SOCIAL</h3>
+                    <p>
+                      Stay up to date with the latest news & offers from us
+                    </p>
+                    <form action="">
+                      <div class="subscribe-form">
+                        <input
+                          type="text"
+                          placeholder="Enter your email address"
+                        />
+                        <button class="submit">Subscribe</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="footer__bottom">
+                  <div class="footer__appLink">
+                    <a href=""
+                      ><img
+                        src="./assets/images/app-store.png"
+                        alt="앱스토어 바로가기"
+                    /></a>
+                    <a href=""
+                      ><img
+                        src="./assets/images/google-play.png"
+                        alt="구글스토어 바로가기"
+                    /></a>
+                  </div>
+                  <p class="footer__copyright">
+                    copyright@beat someone2019 .All Right reserved.
+                  </p>
+                </div>
+              </div>
+            </footer>
+
+            <!--  -->
           </section>
         </div>
       </div>
