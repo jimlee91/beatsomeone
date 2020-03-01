@@ -67,3 +67,24 @@
     }
   }
 }
+
+.checkbox {
+  @include flex();
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  input {
+    &:checked + span {
+      border: none;
+      background: url("../images/icon/checkbox-on.png") no-repeat center;
+      background-size: 15px 15px;
+    }
+  }
+  span {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #40424f;
+    background: #33353f;
+    margin-right: 15px;
+  }
+}

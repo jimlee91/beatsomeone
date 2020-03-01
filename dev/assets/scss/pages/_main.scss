@@ -153,5 +153,32 @@
     .testimonials__lists {
       @include flex($justify: center);
     }
+    .testimonials__btnbox {
+      @include flex($justify: center);
+      margin-top: 60px;
+      a {
+        @include borderLikeButton($padding: 15px 40px);
+        font-size: 1rem;
+        color: #fff;
+        margin: 0 5px;
+        &.beats {
+          border-color: #ffda2a;
+          color: #ffda2a;
+        }
+      }
+    }
+  }
+
+  .main__desc {
+    text-align: center;
+    margin-top: 300px;
+    h1 {
+      @include titleFont($display: 1, $style: italic, $letterSpacing: -0.045em);
+    }
+    a {
+      @include borderLikeButton;
+      color: #fff;
+      margin-top: 60px;
+    }
   }
 }

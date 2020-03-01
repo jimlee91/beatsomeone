@@ -77,7 +77,44 @@ function renderPlaylist(arr) {
   });
 }
 
+function renderPlaylistNoDepth(arr) {
+  _.each(arr, function(item, index) {
+    document
+      .getElementById("playList__list")
+      .insertAdjacentHTML("beforeend", template(item));
+
+    setAudioInstance(item);
+  });
+}
+
 $(function() {
+  $(".filter__title").on("click", function() {
+    $(this).toggleClass("folded");
+    $(this)
+      .siblings(".filter__content")
+      .stop()
+      .slideToggle();
+  });
+
+  // BPM range
+  if ($(".bpmRange").length) {
+    $(".bpmRange input").ionRangeSlider({
+      skin: "round",
+      type: "double",
+      min: 0,
+      max: 170,
+      from: 0,
+      to: 125,
+      onStart: function(data) {
+        $("#bpm-start").val(data.from_pretty);
+        $("#bpm-end").val(data.to_pretty);
+      },
+      onChange: function(data) {
+        $("#bpm-start").val(data.from_pretty);
+        $("#bpm-end").val(data.to_pretty);
+      }
+    });
+  }
   // 메인 trend Slider
   $(".trending__slider .slider").slick({
     slidesToShow: 6,

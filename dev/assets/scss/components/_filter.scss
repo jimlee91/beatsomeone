@@ -1,0 +1,45 @@
+/*
+<div class="filter">
+    <h2 class="filter__title">FILTER</h2>
+    <div class="filter__content">
+        
+    </div>
+</div>
+*/
+
+.filter {
+  background: #1c1d23;
+  border: 1px solid #2b2c30;
+  .filter__title {
+    line-height: 60px;
+    padding: 0 30px;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      width: 9px;
+      height: 5px;
+      background: url("../images/icon/arrow-top.png") no-repeat center;
+      display: block;
+      @include position($top: calc(50% - 3px), $right: 20px);
+      transition: all 0.3s;
+    }
+    &.folded:after {
+      transform: rotate(180deg);
+    }
+  }
+  .filter__content {
+    border-top: 1px solid #2b2c30;
+    padding: 30px;
+  }
+  .filter__item {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

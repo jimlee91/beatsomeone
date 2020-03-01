@@ -1,0 +1,58 @@
+.sublist {
+  padding-top: 30px;
+  .wrap {
+    @include flex($align: flex-start);
+  }
+
+  .row {
+    margin-bottom: 100px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .sublist__filter {
+    width: 250px;
+    margin-right: 60px;
+    flex: none;
+
+    .row {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .sublist__content {
+    flex: 1;
+
+    .topFive {
+      @include flex($justify: space-between);
+      .albumItem {
+        padding: 0;
+      }
+    }
+  }
+
+  .col {
+    &.name {
+      width: 345px;
+      figure {
+        margin: 0;
+      }
+    }
+    &.genre {
+      width: 245px;
+    }
+    &.utils {
+      margin: 0;
+    }
+    &.spectrum {
+      width: 0;
+      flex: none;
+    }
+    &.playbtn {
+      flex: 1;
+    }
+  }
+}

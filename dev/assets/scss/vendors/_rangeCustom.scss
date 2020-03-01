@@ -1,0 +1,41 @@
+.irs--round .irs-min,
+.irs--round .irs-max,
+.irs--round .irs-from,
+.irs--round .irs-to,
+.irs--round .irs-single {
+  display: none;
+}
+
+.irs--round {
+  height: 24px;
+}
+.irs--round .irs-handle {
+  top: 4px;
+}
+.irs--round .irs-line,
+.irs--round .irs-bar {
+  top: 10px;
+}
+
+.irs--round .irs-bar {
+  background: #ffda2a;
+}
+.irs--round .irs-handle {
+  border: none;
+  background: #fff;
+  width: 17px;
+  height: 17px;
+}
+
+.bpmRangeInfo {
+  @include flex($justify: space-between);
+  margin-top: 25px;
+  input {
+    width: 80px;
+    height: 30px;
+    background: #35363d;
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 3px;
+  }
+}

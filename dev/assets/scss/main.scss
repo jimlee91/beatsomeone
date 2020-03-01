@@ -16,8 +16,13 @@
 @import "components/customForm";
 @import "components/albumItem";
 @import "components/card";
+@import "components/sectionTitle";
 
+@import "layout/container";
 @import "layout/header";
 @import "layout/footer";
 
+@import "pages/sublist";
 @import "pages/main";
+
+@import "vendors/rangeCustom";
