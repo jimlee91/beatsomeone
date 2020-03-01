@@ -55,4 +55,32 @@
       flex: 1;
     }
   }
+
+  .sort {
+    @include flex();
+    height: 40px;
+    span {
+      font-size: 14px;
+      color: #a1a1a1;
+      opacity: 0.5;
+      margin-right: 10px;
+    }
+    @include position($right: 0, $top: 0);
+    .custom-select {
+      width: 160px;
+      .selected-option {
+        height: 40px;
+        border: 1px solid #414143;
+        width: 100%;
+        text-align: left;
+      }
+      .option {
+        width: 100%;
+        text-align: left;
+      }
+      &.active .selected-option {
+        border: none;
+      }
+    }
+  }
 }
