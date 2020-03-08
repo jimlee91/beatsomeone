@@ -4,23 +4,21 @@
 }
 
 // main__media
-.main__media {
-  .tab {
-    @include flex($justify: space-around);
-    padding: 0 20px;
-    button {
-      color: #9fa1a9;
-      height: 70px;
-      font-weight: 600;
-      transition: all 0.5s;
-      &.active {
-        color: $color-white;
-        border-bottom: 3px solid $color-white;
-      }
-      &:hover {
-        color: $color-white;
-        opacity: 0.85;
-      }
+.tab {
+  @include flex($justify: space-around);
+  padding: 0 20px;
+  button {
+    color: #9fa1a9;
+    height: 70px;
+    font-weight: 600;
+    transition: all 0.5s;
+    &.active {
+      color: $color-white;
+      border-bottom: 3px solid $color-white;
+    }
+    &:hover {
+      color: $color-white;
+      opacity: 0.85;
     }
   }
 }

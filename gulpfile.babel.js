@@ -35,17 +35,19 @@ const validateHtml = () => {
 };
 
 const html = () => {
-  return gulp
-    .src("dev/*.html")
-    .pipe(plumber())
-    .pipe(
-      fileinclude({
-        prefix: "@@",
-        basepath: "dev"
-      })
-    )
-    .pipe(validateHtml())
-    .pipe(gulp.dest("dist"));
+  return (
+    gulp
+      .src("dev/*.html")
+      .pipe(plumber())
+      .pipe(
+        fileinclude({
+          prefix: "@@",
+          basepath: "dev"
+        })
+      )
+      // .pipe(validateHtml())
+      .pipe(gulp.dest("dist"))
+  );
 };
 
 const scss = () => {
@@ -110,10 +112,12 @@ const js = () => {
 
 //  이미지 용량 최소화
 const minImg = () => {
-  return gulp
-    .src("dev/assets/images/**/*")
-    .pipe(imagemin())
-    .pipe(gulp.dest("dist/assets/images"));
+  return (
+    gulp
+      .src("dev/assets/images/**/*")
+      // .pipe(imagemin())
+      .pipe(gulp.dest("dist/assets/images"))
+  );
 };
 
 //  이미지 용량 최소화

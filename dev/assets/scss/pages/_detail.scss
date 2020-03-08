@@ -1,0 +1,186 @@
+.detail {
+  padding-top: 55px;
+  background: url("../images/detail-bg.png") no-repeat top center;
+  background-size: 100% auto;
+  .tab {
+    justify-content: flex-start;
+    button {
+      margin-right: 70px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .detail__body {
+  }
+
+  .detail__player {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    .detail__player-controller {
+      width: 35px;
+      height: 35px;
+      background: url("../images/icon/play-yellow.png") no-repeat center;
+      background-size: 100% 100%;
+      border-radius: 50%;
+      margin-right: 20px;
+      flex: none;
+      &.playing {
+        background: url("../images/icon/stop-yellow.png") no-repeat center;
+        background-size: 100% 100%;
+      }
+    }
+    #detail__player-wave {
+      flex: 1;
+      height: 100px;
+      overflow: hidden;
+
+      wave {
+        border: none !important;
+      }
+    }
+  }
+
+  .detail__content {
+    margin-top: 30px;
+    .col.spectrum {
+      display: none;
+    }
+    .col.name {
+      flex: 1;
+      figure {
+        flex: 1;
+        margin: 0;
+      }
+      figcaption {
+        flex: 1;
+        width: auto;
+      }
+    }
+    .col.utils {
+      margin-left: 0;
+    }
+  }
+
+  .detail__header {
+    padding: 60px 0;
+  }
+  .detail__comment {
+    margin-top: 30px;
+  }
+  .detail__music {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .detail__music-info {
+      padding: 10px 0;
+      flex: 1;
+      .title {
+        font-size: 28px;
+      }
+      .singer {
+        font-size: 15px;
+        margin-top: 10px;
+      }
+      .state {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 14px;
+        .play {
+          background: url("../images/icon/start.png") no-repeat left center;
+          padding-left: 20px;
+          margin-right: 20px;
+        }
+        .song {
+          background: url("../images/icon/song.png") no-repeat left center;
+          padding-left: 20px;
+          margin-right: 20px;
+        }
+        .registed {
+          background: url("../images/icon/time.png") no-repeat left center;
+          padding-left: 20px;
+          margin-right: 20px;
+        }
+        .etc {
+          padding-left: 20px;
+          border-left: 1px solid #fff;
+        }
+      }
+      .utils {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        .utils__info {
+          display: flex;
+          flex-wrap: wrap;
+          .buy {
+            background: #279198;
+            color: #fff;
+            line-height: 40px;
+            padding: 0 16px;
+            border-radius: 3px;
+            span {
+              background: url("../images/icon/buy.png") no-repeat left center;
+              margin: 0;
+              padding-left: 28px;
+            }
+          }
+          span {
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 25px;
+            line-height: 40px;
+            padding-left: 35px;
+            &.cart {
+              background: url("../images/icon/cart.png") no-repeat left center;
+            }
+            &.talk {
+              background: url("../images/icon/talk.png") no-repeat left center;
+            }
+            &.share {
+              background: url("../images/icon/shared.png") no-repeat left center;
+            }
+            &.atob {
+              background: url("../images/icon/atob.png") no-repeat left center;
+            }
+          }
+        }
+        .category {
+          width: 250px;
+          flex: none;
+          text-align: right;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          span {
+            font-size: 12px;
+            margin: 0 0 3px 3px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+            line-height: 25px;
+            padding: 0 1em;
+            border-radius: 2em;
+          }
+        }
+      }
+    }
+    .detail__music-img {
+      overflow: hidden;
+      margin-right: 40px;
+      flex: none;
+      width: 190px;
+      border-radius: 8px;
+      img {
+        vertical-align: top;
+      }
+    }
+  }
+}
