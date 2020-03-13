@@ -16,34 +16,58 @@
   </head>
   <body>
     <div class="wrapper">
-      <!-- @@include('./include/header.html') -->
+      @@include('./include/header.html')
 
-      <header class="header">
+      <div class="player">
         <div class="wrap">
-          <h1 class="header__logo">
-            <a href="/"><img src="./assets//images/logo.png" alt=""/></a>
-          </h1>
-          <div class="header__gnb">
-            <div class="header__search">
-              <form action="/">
-                <input type="text" />
-                <button></button>
-              </form>
+          <div class="player__top">
+            <div class="player__progress">
+              <div id="progress-container">
+                <input type="range" class="amplitude-song-slider">
+                <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+                <progress id="song-buffered-progress" class="amplitude-buffered-progress"></progress>
+              </div>
             </div>
-            <nav class="header__nav">
-              <a href="">HOME</a>
-              <a href="">Free Beats</a>
-              <a href="">Pricing</a>
-              <a href="">Login</a>
-              <a href="">Sign In</a>
-              <a href="" class="header__cart">($0.00)</a>
-            </nav>
+          </div>
+          <div class="player__bottom">
+            <div class="player__favorite">
+              <button></button>
+            </div>
+            <div class="player__info">
+              <div class="col name">
+                <figure>
+                  <span class="playList__cover">
+                    <img data-amplitude-song-info="cover_art_url" class="album-art"/>
+                  </span>
+                  <figcaption>
+                    <h3 class="playList__title song-title" data-amplitude-song-info="name" >
+                    </h3>
+                    <span class="playList__by song-artist" data-amplitude-song-info="artist"></span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+            <div id="central-controls" class="player__controller">
+              <div class="amplitude-prev" id="previous"></div>
+              <div class="amplitude-play-pause amplitude-paused" id="play-pause"></div>
+              <div class="amplitude-next" id="next"></div>
+            </div>
+            <div class="player__util">
+              <div class="player__shuffle amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
+              <div class="player__repeat amplitude-repeat amplitude-repeat-off" id="repeat"></div>
+                <div id="volume-container" class="player__volume">
+                  <div class="volume-controls">
+                    <div class="amplitude-mute amplitude-not-muted"></div>
+                    <input type="range" class="amplitude-volume-slider">
+                    <div class="ms-range-fix"></div>
+                  </div>
+                  <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-
-      <!--  -->
-
+      </div>
       <div class="container">
         <div class="main">
           <section class="main__section1">
@@ -56,7 +80,6 @@
                   producers to collaborate with have never been easier.
                 </p>
               </header>
-
               <div class="main__media">
                 <div class="tab">
                   <button class="active">
@@ -316,112 +339,7 @@
                 </a>
               </div>
             </div>
-            <!-- @@include('./include/footer.html') -->
-            <footer class="footer">
-              <div class="wrap">
-                <div class="footer__top">
-                  <div class="footer__logo">
-                    <a href="/"><img src="./assets/images/logo.png" alt=""/></a>
-                  </div>
-                  <div class="footer__sns sns">
-                    <a href="" class="sns__insta"
-                      ><img
-                        src="./assets/images/icon/instagram.png"
-                        alt="인스타그렘으로 바로가기"
-                    /></a>
-                    <a href="" class="sns__insta"
-                      ><img
-                        src="./assets/images/icon/youtube.png"
-                        alt="유튜브로 바로가기"
-                    /></a>
-                    <a href="" class="sns__insta"
-                      ><img
-                        src="./assets/images/icon/facebook.png"
-                        alt="페이스북으로 바로가기"
-                    /></a>
-                    <a href="" class="sns__insta"
-                      ><img
-                        src="./assets/images/icon/twitter.png"
-                        alt="트위터로 바로가기"
-                    /></a>
-                  </div>
-                </div>
-                <div class="footer__content">
-                  <div class="footer__subLink">
-                    <div class="row">
-                      <h3>
-                        <a href="/">BEAT SOMEONE</a>
-                      </h3>
-                      <ul>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">Merch</a></li>
-                        <li><a href="">Blog</a></li>
-                      </ul>
-                    </div>
-                    <div class="row">
-                      <h3>
-                        <a href="/">FEATURES</a>
-                      </h3>
-                      <ul>
-                        <li><a href="">Selling Music</a></li>
-                        <li><a href="">Pro Page</a></li>
-                        <li><a href="">Blaze Player</a></li>
-                        <li><a href="">Monetization</a></li>
-                        <li><a href="">Testimonials</a></li>
-                      </ul>
-                    </div>
-                    <div class="row">
-                      <h3>
-                        <a href="/">SUPPORT</a>
-                      </h3>
-                      <ul>
-                        <li><a href="">Help</a></li>
-                        <li><a href="">Cookie Policy</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Copyright Complaint</a></li>
-                        <li><a href="">Terms & Conditions</a></li>
-                        <li><a href="">Contact Us</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="footer__subscribe">
-                    <h3>BEAT SOMEONE SOCIAL</h3>
-                    <p>
-                      Stay up to date with the latest news & offers from us
-                    </p>
-                    <form action="">
-                      <div class="subscribe-form">
-                        <input
-                          type="text"
-                          placeholder="Enter your email address"
-                        />
-                        <button class="submit">Subscribe</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <div class="footer__bottom">
-                  <div class="footer__appLink">
-                    <a href=""
-                      ><img
-                        src="./assets/images/app-store.png"
-                        alt="앱스토어 바로가기"
-                    /></a>
-                    <a href=""
-                      ><img
-                        src="./assets/images/google-play.png"
-                        alt="구글스토어 바로가기"
-                    /></a>
-                  </div>
-                  <p class="footer__copyright">
-                    copyright@beat someone2019 .All Right reserved.
-                  </p>
-                </div>
-              </div>
-            </footer>
-
-            <!--  -->
+            @@include('./include/footer.html')
           </section>
         </div>
       </div>
@@ -430,6 +348,7 @@
     <script src="./assets/plugins/underscore.js"></script>
     <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="./assets/plugins/slick/slick.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.0.3/dist/amplitude.js"></script>
     <script src="./assets/js/build.js"></script>
     <!-- playlist item 템플릿 문자열 -->
     <script type="text/template" id="playListTemplate">
@@ -670,94 +589,36 @@
             }
           ]
         },
+      ];
+      renderPlaylist(playList);
+    </script>
+
+    <script>
+      var songs = [
         {
-          id: 2,
-          coverImg: "https://via.placeholder.com/55x55",
-          isNew: true,
-          title: "EMOTIONS",
-          singer: "by Mvrio",
-          genres: [
-            {
-              active: true,
-              title: "Acoustic Folk"
-            },
-            {
-              active: true,
-              title: "Electronic"
-            },
-            {
-              active: false,
-              title: "Amb"
-            },
-            {
-              active: false,
-              title: "Fol"
-            },
-            {
-              active: false,
-              title: "Singer-Songwriter"
-            }
-          ],
-          audioFile: "./assets/audio/testfile.mp3",
-          subPlayList: []
+          name: "I Came Running",
+          artist: "Ancient Astronauts",
+          album: "We Are to Answer",
+          url: "./assets/audio/testfile.mp3",
+          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-to-answer.jpg",
+          tags: [
+
+          ]
         },
         {
-          id: 3,
-          coverImg: "https://via.placeholder.com/55x55",
-          isNew: true,
-          title: "Aishiteru (Dean Lo-Fi Inst...",
-          singer: "by Roko Tensei",
-          genres: [
-            {
-              active: true,
-              title: "Hip Hop"
-            },
-            {
-              active: false,
-              title: "Jaz"
-            },
-            {
-              active: false,
-              title: "Amb"
-            },
-            {
-              active: false,
-              title: "Fol"
-            },
-            {
-              active: false,
-              title: "World"
-            }
-          ],
-          audioFile: "./assets/audio/testfile.mp3",
-          subPlayList: []
-        },
-        {
-          id: 4,
-          coverImg: "https://via.placeholder.com/55x55",
-          isNew: true,
-          title: "Sad Acoustic Guitar",
-          singer: "Ryini Beats",
-          genres: [
-            {
-              active: true,
-              title: "Acoustic Folk"
-            },
-            {
-              active: false,
-              title: "Jaz"
-            },
-            {
-              active: false,
-              title: "Free Beats"
-            }
-          ],
-          audioFile: "./assets/audio/testfile.mp3",
-          subPlayList: []
+          name: "First Snow",
+          artist: "Emancipator",
+          album: "Soon It Will Be Cold Enough",
+          url: "https://521dimensions.com/song/FirstSnow-Emancipator.mp3",
+          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/soon-it-will-be-cold-enough.jpg"
         }
       ];
-
-      renderPlaylist(playList);
+      Amplitude.init({
+        "songs": songs,
+        waveforms: {
+          sample_rate: 3000
+        }
+      });
     </script>
   </body>
 </html>
