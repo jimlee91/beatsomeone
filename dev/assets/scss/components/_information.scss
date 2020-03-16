@@ -1,0 +1,39 @@
+.information {
+  padding: 30px;
+  @include flex($align: flex-start);
+
+  .information__thumb {
+    width: 130px;
+    height: 130px;
+    flex: none;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 50px;
+  }
+
+  .information__user {
+    flex: 1;
+  }
+  .information__username {
+    font-size: 30px;
+    line-height: 1.25em;
+  }
+  .information__description {
+    margin-top: 15px;
+    white-space: pre-line;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: .3;
+  }
+  .information__message {
+    display: inline-block;
+    width: 110px;
+    line-height: 40px;
+    border-radius: 3px;
+    background:#1c66ba;
+    color:#fff;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+  }
+}
