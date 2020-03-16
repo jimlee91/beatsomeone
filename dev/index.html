@@ -17,13 +17,17 @@
   <body>
     <div class="wrapper">
       @@include('./include/header.html')
-
+      
       <div class="player">
         <div class="wrap">
           <div class="player__top">
             <div class="player__progress">
+              <div id="waveform">
+                  <!-- Here be waveform -->
+              </div>
+
               <div id="progress-container">
-                <input type="range" class="amplitude-song-slider">
+                <input type="range" class="amplitude-song-slider" step=".1"/>
                 <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
                 <progress id="song-buffered-progress" class="amplitude-buffered-progress"></progress>
               </div>
@@ -68,6 +72,8 @@
           </div>
         </div>
       </div>
+
+
       <div class="container">
         <div class="main">
           <section class="main__section1">
@@ -361,7 +367,7 @@
             <figure>
               <span class="playList__cover">
                 <img
-                  src="<%- item.coverImg %>"
+                  src="<%- item.cover_art_url %>"
                   alt=""
                 />
                 <% if ( item.isNew === true ) { %>
@@ -370,9 +376,9 @@
               </span>
               <figcaption>
                 <h3 class="playList__title">
-                  <%- item.title %>
+                  <%- item.name %>
                 </h3>
-                <span class="playList__by"><%- item.singer %></span>
+                <span class="playList__by"><%- item.artist %></span>
               </figcaption>
             </figure>
             <% if ( item.subPlayList.length > 0 ) { %>
@@ -386,7 +392,7 @@
             <% }) %>
           </div>
           <div class="col playbtn">
-            <button class="btn-play" data-action="playAction<%- item.id %>">재생</button>
+            <button class="btn-play" data-action="playAction<%- item.id %>" data-id="<%- item.id %>">재생</button>
             <span class="timer">
               <span class="current"></span>
               <span class="duration">0:00</span>
@@ -474,17 +480,18 @@
         </ul>
       </li>
     </script>
-
     <script>
       _.templateSettings.variable = "item";
       var template = _.template($("#playListTemplate").text());
       var playList = [
         {
           id: 1,
-          coverImg: "https://via.placeholder.com/55x55",
+          name: "I Came Running",
+          artist: "Ancient Astronauts",
+          album: "We Are to Answer",
+          url: "./assets/audio/testfile.mp3",
+          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-to-answer.jpg",
           isNew: true,
-          title: "Celebration (Buy 1 Get 3 FR...",
-          singer: "by Diamond Style",
           genres: [
             {
               active: true,
@@ -507,114 +514,58 @@
               title: "Singer-Songwriter"
             }
           ],
-          audioFile: "./assets/audio/testfile.mp3",
           subPlayList: [
+            
+          ]
+        },
+        {
+          id: 2,
+          name: "First Snow",
+          artist: "Emancipator",
+          album: "Soon It Will Be Cold Enough",
+          url: "https://521dimensions.com/song/FirstSnow-Emancipator.mp3",
+          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/soon-it-will-be-cold-enough.jpg",
+          isNew: true,
+          genres: [
             {
-              id: 8,
-              coverImg: "https://via.placeholder.com/55x55",
-              isNew: true,
-              title: "Sky Red",
-              singer: "by Ant Chamberlain",
-              genres: [
-                {
-                  active: true,
-                  title: "K-Pop"
-                },
-                {
-                  active: true,
-                  title: "Country"
-                },
-                {
-                  active: false,
-                  title: "Amb"
-                },
-                {
-                  active: false,
-                  title: "K-Pop"
-                },
-                {
-                  active: false,
-                  title: "Singer-Songwriter"
-                }
-              ],
-              audioFile: "./assets/audio/testfile.mp3"
+              active: true,
+              title: "All Genre"
             },
             {
-              id: 13,
-              coverImg: "https://via.placeholder.com/55x55",
-              isNew: true,
-              title: "Malibu",
-              singer: "by Mvrio",
-              genres: [
-                {
-                  active: false,
-                  title: "Fol"
-                },
-                {
-                  active: false,
-                  title: "Singer-Songwriter"
-                }
-              ],
-              audioFile: "./assets/audio/testfile.mp3"
+              active: true,
+              title: "Jaz"
             },
             {
-              id: 24,
-              coverImg: "https://via.placeholder.com/55x55",
-              isNew: true,
-              title: "Sky Red_breathe-no bac...",
-              singer: "by Ant Chamberlain",
-              genres: [
-                {
-                  active: true,
-                  title: "Reggae"
-                },
-                {
-                  active: true,
-                  title: "R&B"
-                },
-                {
-                  active: false,
-                  title: "Amb"
-                },
-                {
-                  active: false,
-                  title: "Fol"
-                },
-                {
-                  active: false,
-                  title: "Singer-Songwriter"
-                }
-              ],
-              audioFile: "./assets/audio/testfile.mp3"
+              active: false,
+              title: "Amb"
+            },
+            {
+              active: false,
+              title: "Fol"
+            },
+            {
+              active: false,
+              title: "Singer-Songwriter"
             }
+          ],
+          subPlayList: [
+            
           ]
         },
       ];
       renderPlaylist(playList);
     </script>
+    
+
+      <script>
+      
+
+      </script>
 
     <script>
-      var songs = [
-        {
-          name: "I Came Running",
-          artist: "Ancient Astronauts",
-          album: "We Are to Answer",
-          url: "./assets/audio/testfile.mp3",
-          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-to-answer.jpg",
-          tags: [
-
-          ]
-        },
-        {
-          name: "First Snow",
-          artist: "Emancipator",
-          album: "Soon It Will Be Cold Enough",
-          url: "https://521dimensions.com/song/FirstSnow-Emancipator.mp3",
-          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/soon-it-will-be-cold-enough.jpg"
-        }
-      ];
       Amplitude.init({
-        "songs": songs,
+        "songs": [],
+        delay: 3000,
         waveforms: {
           sample_rate: 3000
         }
