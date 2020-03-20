@@ -1,4 +1,4 @@
-if (window.AudioContext) {
+if (!window.AudioContext) {
   // webaudio 작동 ( ex 크롬 )
   function time_convert(num) {
     var minutes = Math.floor(num / 60);
@@ -23,9 +23,6 @@ if (window.AudioContext) {
         .querySelector("#playList__item" + item.id)
         .querySelector(".playList__cover")
         .cloneNode(true);
-
-      console.log(playingThumb);
-
       document
         .querySelector("#playList__item" + item.id)
         .classList.add("playing");
