@@ -17,21 +17,24 @@
   <body>
     <div class="wrapper">
       @@include('./include/header.html')
-      
       <div class="player">
         <div class="wrap">
           <div class="player__top">
             <div class="player__progress">
               <div id="waveform">
-                  <!-- Here be waveform -->
-
-
+                <!-- Here be waveform -->
               </div>
 
               <div id="progress-container">
-                <input type="range" class="amplitude-song-slider" step=".1"/>
-                <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
-                <progress id="song-buffered-progress" class="amplitude-buffered-progress"></progress>
+                <input type="range" class="amplitude-song-slider" step=".1" />
+                <progress
+                  id="song-played-progress"
+                  class="amplitude-song-played-progress"
+                ></progress>
+                <progress
+                  id="song-buffered-progress"
+                  class="amplitude-buffered-progress"
+                ></progress>
               </div>
             </div>
           </div>
@@ -43,38 +46,56 @@
               <div class="col name">
                 <figure>
                   <span class="playList__cover">
-                    <img data-amplitude-song-info="cover_art_url" class="album-art"/>
+                    <img
+                      data-amplitude-song-info="cover_art_url"
+                      class="album-art"
+                    />
                   </span>
                   <figcaption>
-                    <h3 class="playList__title song-title" data-amplitude-song-info="name" >
-                    </h3>
-                    <span class="playList__by song-artist" data-amplitude-song-info="artist"></span>
+                    <h3
+                      class="playList__title song-title"
+                      data-amplitude-song-info="name"
+                    ></h3>
+                    <span
+                      class="playList__by song-artist"
+                      data-amplitude-song-info="artist"
+                    ></span>
                   </figcaption>
                 </figure>
               </div>
             </div>
             <div id="central-controls" class="player__controller">
               <div class="amplitude-prev" id="previous"></div>
-              <div class="amplitude-play-pause amplitude-paused" id="play-pause"></div>
+              <div
+                class="amplitude-play-pause amplitude-paused"
+                id="play-pause"
+              ></div>
               <div class="amplitude-next" id="next"></div>
             </div>
             <div class="player__util">
-              <div class="player__shuffle amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
-              <div class="player__repeat amplitude-repeat amplitude-repeat-off" id="repeat"></div>
-                <div id="volume-container" class="player__volume">
-                  <div class="volume-controls">
-                    <div class="amplitude-mute amplitude-not-muted"></div>
-                    <input type="range" class="amplitude-volume-slider">
-                    <div class="ms-range-fix"></div>
-                  </div>
-                  <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
+              <div
+                class="player__shuffle amplitude-shuffle amplitude-shuffle-off"
+                id="shuffle-right"
+              ></div>
+              <div
+                class="player__repeat amplitude-repeat amplitude-repeat-off"
+                id="repeat"
+              ></div>
+              <div id="volume-container" class="player__volume">
+                <div class="volume-controls">
+                  <div class="amplitude-mute amplitude-not-muted"></div>
+                  <input type="range" class="amplitude-volume-slider" />
+                  <div class="ms-range-fix"></div>
                 </div>
+                <div
+                  class="amplitude-shuffle amplitude-shuffle-off"
+                  id="shuffle-right"
+                ></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
 
       <div class="container">
         <div class="main">
@@ -503,7 +524,10 @@
     <script src="./assets/plugins/underscore.js"></script>
     <script src="https://unpkg.com/wavesurfer.js"></script>
     <script src="./assets/plugins/slick/slick.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.0.3/dist/amplitude.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/amplitudejs@5.0.3/dist/amplitude.js"
+    ></script>
     <script src="./assets/js/build.js"></script>
     <!-- playlist item 템플릿 문자열 -->
     <!--
@@ -630,7 +654,6 @@
     </script>
     -->
 
-
     <script type="text/template" id="playListTemplate">
       <li class="playList__itembox" id="playList__item<%- item.id %>">
         <div class="playList__item playList__item--title">
@@ -750,7 +773,6 @@
       </li>
     </script>
 
-
     <script>
       _.templateSettings.variable = "item";
       var template = _.template($("#playListTemplate").text());
@@ -761,7 +783,8 @@
           artist: "Ancient Astronauts",
           album: "We Are to Answer",
           url: "./assets/audio/testfile.mp3",
-          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-to-answer.jpg",
+          cover_art_url:
+            "https://521dimensions.com/img/open-source/amplitudejs/album-art/we-are-to-answer.jpg",
           isNew: true,
           genres: [
             {
@@ -785,9 +808,7 @@
               title: "Singer-Songwriter"
             }
           ],
-          subPlayList: [
-            
-          ]
+          subPlayList: []
         },
         {
           id: 2,
@@ -795,7 +816,8 @@
           artist: "Emancipator",
           album: "Soon It Will Be Cold Enough",
           url: "https://521dimensions.com/song/FirstSnow-Emancipator.mp3",
-          cover_art_url: "https://521dimensions.com/img/open-source/amplitudejs/album-art/soon-it-will-be-cold-enough.jpg",
+          cover_art_url:
+            "https://521dimensions.com/img/open-source/amplitudejs/album-art/soon-it-will-be-cold-enough.jpg",
           isNew: true,
           genres: [
             {
@@ -819,10 +841,8 @@
               title: "Singer-Songwriter"
             }
           ],
-          subPlayList: [
-            
-          ]
-        },
+          subPlayList: []
+        }
       ];
       if (!window.AudioContext) {
         renderPlaylist(playList);
@@ -833,18 +853,16 @@
               .getElementById("playList__list")
               .insertAdjacentHTML("beforeend", template(item));
           });
-      }
+        }
         renderPlaylist(playList);
       }
     </script>
-    
 
     <script>
-
       Amplitude.init({
-        "songs": playList,
-        "playlists": {
-          "emancipator": {
+        songs: playList,
+        playlists: {
+          emancipator: {
             songs: playList
           }
         },
