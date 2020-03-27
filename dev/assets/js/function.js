@@ -29,7 +29,7 @@ $(function() {
   // 메인 trend Slider
   $(".trending__slider .slider").slick({
     slidesToShow: 6,
-    slidesToScroll: 1,
+    slidesToScroll: 6,
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: true,

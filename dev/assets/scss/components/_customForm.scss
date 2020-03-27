@@ -63,6 +63,7 @@
   input:checked + span {
     &:after {
       right: auto;
+      background: #ffda2a;
       left: calc(100% - 15px);
     }
   }

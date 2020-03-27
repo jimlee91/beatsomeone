@@ -80,7 +80,7 @@
           .playList__title {
             @include ellipsis;
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 300;
           }
           .playList__by {
             @include ellipsis;

@@ -7,6 +7,24 @@
     border-radius: 8px;
     overflow: hidden;
     background: #000000;
+    position: relative;
+    &:after {
+      content: "";
+      width: 50px;
+      height: 50px;
+      background: url("../images/icon/hover_play.png") no-repeat center;
+      background-size: 50px 50px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
   }
   .albumItem__link {
     display: block;
