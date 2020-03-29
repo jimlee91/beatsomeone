@@ -89,3 +89,35 @@
     margin-right: 15px;
   }
 }
+
+.radio {
+  @include flex();
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  input {
+    &:checked + span {
+      border: 1px solid #ffda2a;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background: #ffda2a;
+        border-radius: 50%;
+      }
+    }
+  }
+  span {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #40424f;
+    background: #33353f;
+    margin-right: 15px;
+    border-radius: 50%;
+    position: relative;
+  }
+}

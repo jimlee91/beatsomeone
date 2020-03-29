@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="이미지" />
+    <meta property="og:url" content="유알엘" />
+    <meta property="og:description" content="디스크립션" />
+    <meta property="og:title" content="타이틀" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/plugins/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/plugins/rangeSlider/css/ion.rangeSlider.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>beatsomeone</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include('./include/header.html')
+      <div class="container accounts">
+        <div class="accounts__title">
+          <h1>
+            Complete sign up
+          </h1>
+        </div>
+        <div class="login accounts__defaultLayout">
+          <form action="">
+            <div class="accounts__form">
+              <div class="row">
+                <label for="">
+                  <p class="form-title">
+                    First name
+                  </p>
+                  <div class="input">
+                    <input
+                      type="text"
+                      placeholder="First name"
+                    />
+                  </div>
+                </label>
+              </div>
+              <div class="row">
+                <label for="">
+                  <p class="form-title">
+                    Last name
+                  </p>
+                  <div class="input">
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                    />
+                  </div>
+                </label>
+              </div>
+              <div class="row">
+                <label for="">
+                  <p class="form-title">
+                    City of Residence, State
+                  </p>
+                  <div class="input">
+                    <input
+                      type="text"
+                      placeholder="City of Residence, State"
+                    />
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="accounts__btnbox half">
+              <button type="reset" class="btn btn--gray">
+                Skipping
+              </button>
+
+              <button type="submit" class="btn btn--submit">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      @@include('./include/footer.html')
+    </div>
+    <script src="./assets/plugins/jquery.js"></script>
+    <script src="./assets/plugins/underscore.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="./assets/plugins/slick/slick.js"></script>
+    <script src="./assets/plugins/rangeSlider/js/ion.rangeSlider.js"></script>
+    <script src="./assets/js/build.js"></script>
+  </body>
+</html>

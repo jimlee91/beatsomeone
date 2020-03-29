@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="이미지" />
+    <meta property="og:url" content="유알엘" />
+    <meta property="og:description" content="디스크립션" />
+    <meta property="og:title" content="타이틀" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/plugins/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/plugins/rangeSlider/css/ion.rangeSlider.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>beatsomeone</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include('./include/header.html')
+      <div class="container accounts">
+        <div class="accounts__title">
+          <h1>
+            Complete sign up
+          </h1>
+        </div>
+        <div class="login accounts__defaultLayout">
+          <form action="">
+            <div class="accounts__form">
+              <div class="row">
+                <label for="">
+                  <p class="form-title">
+                    Your username
+                    <span class="required">*</span>
+                  </p>
+                  <div class="input">
+                    <input
+                      type="text"
+                      placeholder="Set a username for your profile"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+              <div class="row">
+                <label for="">
+                  <p class="form-title">
+                    Your e-mail <span class="required">*</span>
+                  </p>
+                  <div class="input">
+                    <input
+                      type="email"
+                      placeholder="Type your e-mail"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+              <div class="row">
+                <label for="">
+                  <p class="form-title">
+                    Password <span class="required">*</span>
+                  </p>
+                  <div class="input">
+                    <input
+                      type="password"
+                      placeholder="Type your password"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+              <div class="row">
+                <label for="">
+                  <p class="form-title">
+                    Your e-mail <span class="required">*</span>
+                  </p>
+                  <div class="input">
+                    <input
+                      type="password"
+                      placeholder="Type your password again"
+                      required
+                    />
+                  </div>
+                </label>
+              </div>
+
+              <div class="row">
+                <p class="form-title">USER TYPE</p>
+                <div class="accounts__check">
+                  <label for="type1" class="radio">
+                    <input type="radio" id="type1" hidden name="TYPE" />
+                    <span></span> Music Lover
+                  </label>
+                  <label for="type2" class="radio">
+                    <input type="radio" id="type2" hidden name="TYPE" />
+                    <span></span> Recording Artist
+                  </label>
+                  <label for="type3" class="radio">
+                    <input type="radio" id="type3" hidden name="TYPE" />
+                    <span></span> Music Producer
+                  </label>
+                  <label for="type4" class="radio">
+                    <input type="radio" id="type4" hidden name="TYPE" />
+                    <span></span> Artist/Producer
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="accounts__privacy">
+              <label for="privacy" class="checkbox">
+                <input type="checkbox" hidden id="privacy" />
+                <span></span> I have read and agree to the
+                <a href="">Terms of service</a>
+                &
+                <a href="">Privacy policy.</a>
+              </label>
+            </div>
+            <div class="accounts__btnbox border-none">
+              <button type="submit" class="btn btn--submit">
+                Sign up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      @@include('./include/footer.html')
+    </div>
+    <script src="./assets/plugins/jquery.js"></script>
+    <script src="./assets/plugins/underscore.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="./assets/plugins/slick/slick.js"></script>
+    <script src="./assets/plugins/rangeSlider/js/ion.rangeSlider.js"></script>
+    <script src="./assets/js/build.js"></script>
+  </body>
+</html>

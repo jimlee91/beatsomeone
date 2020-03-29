@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="이미지" />
+    <meta property="og:url" content="유알엘" />
+    <meta property="og:description" content="디스크립션" />
+    <meta property="og:title" content="타이틀" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/plugins/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/plugins/rangeSlider/css/ion.rangeSlider.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>beatsomeone</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include('./include/header.html')
+      <div class="container accounts">
+        <div class="accounts__title">
+          <h1>
+            Sign Up
+          </h1>
+          <p>
+            Create a beatsomeone account & start monetizing your beats!
+          </p>
+        </div>
+        <div class="login accounts__defaultLayout">
+          <div class="accounts__btnbox border-none">
+            <button type="submit" class="btn btn--white">
+              <img src="./assets/images/icon/email.png" alt="" />
+              Sign up with Email
+            </button>
+          </div>
+
+          <div class="accounts__social">
+            <h2>SNS Log in</h2>
+            <a href=""
+              ><img
+                src="./assets/images/accounts-facebook.png"
+                alt="페이스북 로그인"
+            /></a>
+            <a href=""
+              ><img
+                src="./assets/images/accounts-twitter.png"
+                alt="트위터 로그인"
+            /></a>
+            <a href=""
+              ><img src="./assets/images/accounts-google.png" alt="구글 로그인"
+            /></a>
+            <a href=""
+              ><img src="./assets/images/accounts-naver.png" alt="네이버 로그인"
+            /></a>
+            <a href=""
+              ><img src="./assets/images/accounts-kakao.png" alt="카카오 로그인"
+            /></a>
+          </div>
+
+          <div class="accounts__etc">
+            Already have an account? <a href="">Login</a>
+          </div>
+        </div>
+      </div>
+      @@include('./include/footer.html')
+    </div>
+    <script src="./assets/plugins/jquery.js"></script>
+    <script src="./assets/plugins/underscore.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="./assets/plugins/slick/slick.js"></script>
+    <script src="./assets/plugins/rangeSlider/js/ion.rangeSlider.js"></script>
+    <script src="./assets/js/build.js"></script>
+  </body>
+</html>
