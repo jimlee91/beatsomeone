@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="이미지" />
+    <meta property="og:url" content="유알엘" />
+    <meta property="og:description" content="디스크립션" />
+    <meta property="og:title" content="타이틀" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/plugins/slick/slick.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/plugins/rangeSlider/css/ion.rangeSlider.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>beatsomeone</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      @@include('./include/header.html')
+      <div class="container accounts accounts--start">
+        <div class="accounts__title">
+          <h1>Do you create beats?<br />Then join us!</h1>
+        </div>
+
+        <div class="login accounts__defaultLayout">
+          <form action="">
+            <div class="accounts__case">
+              <label for="listen " class="case case--listen">
+                <input type="radio" name="case" id="listen " hidden checked />
+                <div>
+                  <span class="icon"></span>
+                  <p>I want to listen<br />& buy music</p>
+                </div>
+              </label>
+
+              <label for="monetize" class="case case--monetize">
+                <input type="radio" name="case" id="monetize" hidden />
+                <div>
+                  <span class="icon"></span>
+                  <p>I want to monetize<br />my music</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="accounts__switch">
+              <span class="accounts__switch-bg"></span>
+              <label for="monthly">
+                <input type="radio" id="monthly" hidden name="bill" checked />
+                <span>Bill monthly</span>
+              </label>
+              <label for="yearly">
+                <input type="radio" id="yearly" hidden name="bill" />
+                <span>
+                  Bill yearly
+                  <em>Save 20% or more</em>
+                </span>
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="accounts__plan-case">
+          <table>
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      @@include('./include/footer.html')
+    </div>
+    <script src="./assets/plugins/jquery.js"></script>
+    <script src="./assets/plugins/underscore.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="./assets/plugins/slick/slick.js"></script>
+    <script src="./assets/plugins/rangeSlider/js/ion.rangeSlider.js"></script>
+    <script src="./assets/js/build.js"></script>
+
+    <script>
+      var bg = document.querySelector(".accounts__switch-bg");
+      // 월간
+      document.getElementById("monthly").addEventListener("change", function() {
+        if (this.checked === true) {
+          bg.classList.remove("right");
+        }
+      });
+      // 연간
+      document.getElementById("yearly").addEventListener("change", function() {
+        if (this.checked === true) {
+          bg.classList.add("right");
+        }
+      });
+    </script>
+  </body>
+</html>
