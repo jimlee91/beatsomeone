@@ -18,6 +18,9 @@
   &.btn--white {
     color: #000;
     background: #fff;
+    img {
+      vertical-align: middle;
+    }
   }
   &.btn--gray {
     background: #868686;
