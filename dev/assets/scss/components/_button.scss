@@ -23,4 +23,15 @@
     background: #868686;
     color: #fff;
   }
+
+  &.btn--start {
+    width: auto;
+    background: #1c66ba;
+    height: 35px;
+    line-height: 35px;
+    color: #fff;
+    width: 100px;
+    display: inline-block;
+    font-size: 12px;
+  }
 }

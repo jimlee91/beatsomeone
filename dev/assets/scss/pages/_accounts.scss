@@ -38,6 +38,77 @@
     width: 100%;
   }
 
+  .accounts__plan-case {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 65px;
+    th,
+    td {
+      border-right: 1px solid #1a1a1a;
+      text-align: center;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    td {
+      border-bottom: 1px solid #1a1a1a;
+      height: 60px;
+      font-size: 14px;
+      &:first-child {
+        text-align: left;
+        padding: 0 15px;
+      }
+
+      span {
+        @include textIndet;
+        width: 21px;
+        height: 18px;
+        display: inline-block;
+        &.check {
+          background: url("../images/icon/accounts-check.png") no-repeat center;
+        }
+        &.un-check {
+          background: url("../images/icon/accounts-x.png") no-repeat center;
+        }
+      }
+    }
+    th {
+      border-bottom: 2px solid #808080;
+      padding: 20px;
+
+      p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        span {
+          font-weight: 300;
+          font-size: 12px;
+        }
+      }
+      h2 {
+        margin: 15px 0;
+        font-size: 30px;
+        color: #ffda2a;
+        font-weight: 600;
+        line-height: 1em;
+        span {
+          font-size: 24px;
+        }
+        em {
+          font-size: 12px;
+          font-style: normal;
+        }
+      }
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tfoot td {
+      padding: 20px 0;
+      border-top: 1px solid #808080;
+    }
+  }
   .accounts__case {
     @include flex($justify: space-between);
     margin-bottom: 60px;
