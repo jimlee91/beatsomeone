@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="이미지" />
+    <meta property="og:url" content="유알엘" />
+    <meta property="og:description" content="디스크립션" />
+    <meta property="og:title" content="타이틀" />
+    <link
+            href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,900,900i&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/plugins/slick/slick.css" />
+    <link
+            rel="stylesheet"
+            href="./assets/plugins/rangeSlider/css/ion.rangeSlider.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>beatsomeone</title>
+</head>
+<body>
+<div class="wrapper">
+    @@include('include/header.html')
+    <div class="container detail">
+        <div class="detail__header">
+            <div class="wrap">
+                <div class="detail__music">
+                    <div class="detail__music-img">
+                        <img src="https://via.placeholder.com/190x190" alt="" />
+                    </div>
+                    <div class="detail__music-info">
+                        <h2 class="title">Shooting Stars</h2>
+                        <p class="singer">Black Mayo</p>
+                        <div class="state">
+                            <span class="play">547</span>
+                            <span class="song">120</span>
+                            <span class="registed">May 20</span>
+                            <span class="etc"
+                            >Free Downloads: Tagged || Non -Exclusive/Stems/Exclusive:
+                    Untagged</span
+                            >
+                        </div>
+                        <div class="utils">
+                            <div class="utils__info">
+                                <a href="" class="buy"><span>$20.00</span></a>
+                                <span class="cart">700</span>
+                                <span class="talk">412</span>
+                                <span class="share">179</span>
+                                <span class="atob">91</span>
+                            </div>
+                            <div class="category">
+                                <span>Acoustic Folk</span>
+                                <span>Jazz</span>
+                                <span>Ambient</span>
+                                <span>Folk</span>
+                                <span>Singer-Songwriter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail__player">
+                    <button class="detail__player-controller"></button>
+                    <div id="detail__player-wave">
+                        <!-- wave 들어가는 부분-->
+                    </div>
+                </div>
+                <div class="detail__comment">
+                    <form action="">
+                        <div class="commentForm">
+                            <a href="" class="comment__user"></a>
+                            <input
+                                    type="text"
+                                    placeholder="Write a comment..."
+                                    id="comment"
+                                    max="200"
+                            />
+                            <span id="commentLength">0/200</span>
+                            <button>SEND</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="detail__body">
+            <div class="wrap">
+                <div class="tab">
+                    <button class="active">
+                        SIMILAR TRACKS
+                    </button>
+                    <button>
+                        COMMENTS
+                    </button>
+                    <button>
+                        INFORMATION
+                    </button>
+                </div>
+
+                <div class="detail__content">
+                    <div class="playList">
+                        <ul id="playList__list" class="playList__list">
+                            <!-- 플레이리스트 들어감 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('./include/footer.html')
+</div>
+
+<!-- 추가 부분 -->
+
+<div class="modal" id="purchase">
+    <div class="modal__content">
+        <header class="modal__header">
+            <h2 class="modal__title">PLEASE SELECT A PURCHASE TYPE</h2>
+            <button class="modal__close">닫기</button>
+        </header>
+        <div class="modal__body">
+            <div class="album">
+                <div class="album__thumb">
+                    <img src="//via.placeholder.com/190" alt="">
+                </div>
+                <h3>Grenade</h3>
+                <p>Call Me G</p>
+            </div>
+            <div class="purchase-list">
+                <ul>
+                    <li class="parchase-item">
+                        <div class="parchase-info">
+                            <h4 class="parchase-title">BASIC LEASE</h4>
+                            <p class="parchase-desc">MP3 or WAV + STEMS</p>
+
+                            <div class="parchase-description">
+                                <p><i><img src="./assets/images/icon/parchase-info1.png" alt=""></i> Available for 60 days</p>
+                                <p><i><img src="./assets/images/icon/parchase-info2.png" alt=""></i> Unable to edit arbitrarily</p>
+                                <p><i><img src="./assets/images/icon/parchase-info3.png" alt=""></i> Rented members cannot be re-rented to others</p>
+                                <p><i><img src="./assets/images/icon/parchase-info5.png" alt=""></i> no other activities not authorized by the platform</p>
+                            </div>
+                            <div class="parchase-dropdown">
+                                <button class="">정보열람</button>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="buy">
+                                <span>$20.00</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="parchase-item">
+                        <div class="parchase-info">
+                            <h4 class="parchase-title">BASIC LEASE</h4>
+                            <p class="parchase-desc">MP3 or WAV + STEMS</p>
+
+                            <div class="parchase-description">
+                                <p><i><img src="./assets/images/icon/parchase-info1.png" alt=""></i> Available for 60 days</p>
+                                <p><i><img src="./assets/images/icon/parchase-info2.png" alt=""></i> Unable to edit arbitrarily</p>
+                                <p><i><img src="./assets/images/icon/parchase-info3.png" alt=""></i> Rented members cannot be re-rented to others</p>
+                                <p><i><img src="./assets/images/icon/parchase-info4.png" alt=""></i> UNLIMITED</p>
+                                <p><i><img src="./assets/images/icon/parchase-info5.png" alt=""></i> no other activities not authorized by the platform</p>
+                            </div>
+                            <div class="parchase-dropdown">
+                                <button class="">정보열람</button>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="buy">
+                                <span>$20.00</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="parchase-item">
+                        <div class="parchase-info">
+                            <h4 class="parchase-title">BASIC LEASE</h4>
+                            <p class="parchase-desc">MP3 or WAV + STEMS</p>
+
+                            <div class="parchase-description">
+                                <p><i><img src="./assets/images/icon/parchase-info1.png" alt=""></i> Available for 60 days</p>
+                                <p><i><img src="./assets/images/icon/parchase-info2.png" alt=""></i> Unable to edit arbitrarily</p>
+                                <p><i><img src="./assets/images/icon/parchase-info3.png" alt=""></i> Rented members cannot be re-rented to others</p>
+                                <p><i><img src="./assets/images/icon/parchase-info5.png" alt=""></i> no other activities not authorized by the platform</p>
+                            </div>
+                            <div class="parchase-dropdown">
+                                <button class="">정보열람</button>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="buy">
+                                <span>$20.00</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="parchase-item">
+                        <div class="parchase-info">
+                            <h4 class="parchase-title">BASIC LEASE</h4>
+                            <p class="parchase-desc">MP3 or WAV + STEMS</p>
+
+                            <div class="parchase-description">
+                                <p><i><img src="./assets/images/icon/parchase-info1.png" alt=""></i> Available for 60 days</p>
+                                <p><i><img src="./assets/images/icon/parchase-info2.png" alt=""></i> Unable to edit arbitrarily</p>
+                                <p><i><img src="./assets/images/icon/parchase-info3.png" alt=""></i> Rented members cannot be re-rented to others</p>
+                                <p><i><img src="./assets/images/icon/parchase-info5.png" alt=""></i> no other activities not authorized by the platform</p>
+                            </div>
+                            <div class="parchase-dropdown">
+                                <button class="">정보열람</button>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="buy">
+                                <span>$20.00</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="parchase-item">
+                        <div class="parchase-info">
+                            <h4 class="parchase-title">BASIC LEASE</h4>
+                            <p class="parchase-desc">MP3 or WAV + STEMS</p>
+
+                            <div class="parchase-description">
+                                <p><i><img src="./assets/images/icon/parchase-info1.png" alt=""></i> Available for 60 days</p>
+                                <p><i><img src="./assets/images/icon/parchase-info2.png" alt=""></i> Unable to edit arbitrarily</p>
+                                <p><i><img src="./assets/images/icon/parchase-info3.png" alt=""></i> Rented members cannot be re-rented to others</p>
+                                <p><i><img src="./assets/images/icon/parchase-info5.png" alt=""></i> no other activities not authorized by the platform</p>
+                            </div>
+                            <div class="parchase-dropdown">
+                                <button class="">정보열람</button>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="" class="buy">
+                                <span>$20.00</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 추가 끝 -->
+
+
+<script src="./assets/plugins/jquery.js"></script>
+<script src="./assets/plugins/underscore.js"></script>
+<script src="./assets/plugins/slick/slick.js"></script>
+<script src="./assets/plugins/niceScroll.js"></script>
+<script src="./assets/js/build.js"></script>
+<!-- playlist item 템플릿 문자열 -->
+<script>
+    // 추가 부분
+    $('.parchase-dropdown button').on('click', function(){
+        $(this).toggleClass('active');
+        $(this).parents('.parchase-item').find('.parchase-description').toggle();
+    })
+    $('.purchase-list').niceScroll({
+        cursorcolor:"#414349",
+        cursorwidth:"5px",
+        cursorborder: 'none'
+    });
+    $('.modal__close').on('click', function(){
+        $(this).parents('.modal').hide();
+    })
+</script>
+</body>
+</html>
