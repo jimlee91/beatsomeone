@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta property="og:image" content="이미지" />
+    <meta property="og:url" content="유알엘" />
+    <meta property="og:description" content="디스크립션" />
+    <meta property="og:title" content="타이틀" />
+    <link
+            href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,900,900i&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/plugins/slick/slick.css" />
+    <link rel="stylesheet" href="./assets/plugins/datetimepicker/jquery.datetimepicker.min.css" />
+    <link
+            rel="stylesheet"
+            href="./assets/plugins/rangeSlider/css/ion.rangeSlider.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>beatsomeone</title>
+</head>
+<body>
+<div class="wrapper">
+    @@include('include/header.html')
+    <div class="container registered">
+        <div class="registered__title">
+            <h1>Track Metadata Editor</h1>
+        </div>
+
+        <form action="">
+            <section class="registered__section">
+                <div class="wrap">
+                    <h2 class="registered__section-title">General Information</h2>
+                    <div class="registered__section-content">
+                        <div class="row">
+                            <div class="col">
+                                <label for="" class="form-item">
+                                    <p class="form-title required">TITLE</p>
+                                    <div class="input">
+                                        <input ype="text" placeholder="New TrackAS" />
+                                    </div>
+                                    <span class="form-info">
+                                        9 out of 60 Maximum characters allowed
+                                    </span>
+                                </label>
+
+                                <label for="" class="form-item">
+                                    <p class="form-title">TAGS (3)</p>
+                                    <div class="input">
+                                        <input ype="text" placeholder="Tags (,)Comma Separated" maxlength="25" id="tags"/>
+                                        <span class="form-unit"><span>0</span>/25</span>
+                                    </div>
+                                </label>
+
+
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="" class="form-item">
+                                            <p class="form-title required">TRACK TYPE</p>
+                                            <div class="custom-select ">
+                                                <button class="selected-option" type="button">
+                                                    Beat
+                                                </button>
+                                                <div class="options">
+                                                    <button class="option" data-value="" type="button">
+                                                        Beat
+                                                    </button>
+                                                    <button class="option" data-value="" type="button">
+                                                        Beat
+                                                    </button>
+                                                    <button class="option" data-value="" type="button">
+                                                        Beat
+                                                    </button>
+                                                    <button class="option" data-value="" type="button">Beat</button>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label for="" class="form-item">
+                                            <p class="form-title required">RELEASE DATE</p>
+                                            <div class="input">
+                                                <input type="text" class="datepicker">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div for="" class="form-item">
+                                    <p class="form-title required">AUDIOFILES FOR DOWNLOAD</p>
+                                    <label for="file1" class="addAudioFile waves-effect ">
+                                        <div class="addAudioFile__icon">
+                                            <img src="./assets/images/icon/note1.png" alt="">
+                                        </div>
+                                        <div class="addAudioFile__info">
+                                            <input type="file" id="file1" hidden>
+                                            <p>Un-Tagged WAV or MP3</p>
+                                            <span class="format">.WAV (or.MP3)</span>
+                                            <div class="addAudioFile__progress">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <label for="file2" class="addAudioFile waves-effect" style="margin-top: 10px;">
+                                        <div class="addAudioFile__icon">
+                                            <img src="./assets/images/icon/note2.png" alt="">
+                                        </div>
+                                        <div class="addAudioFile__info">
+                                            <input type="file" id="file2" hidden>
+                                            <p>Un-Tagged WAV or MP3</p>
+                                            <span class="format">.WAV (or.MP3)</span>
+                                            <div class="addAudioFile__progress">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div for="" class="form-item">
+                                    <p class="form-title required">AUDIOFILES FOR DOWNLOAD</p>
+                                    <label for="file3" class="addAudioFile waves-effect">
+                                        <div class="addAudioFile__icon">
+                                            <img src="./assets/images/icon/note3.png" alt="">
+                                        </div>
+                                        <div class="addAudioFile__info">
+                                            <input type="file" id="file3" hidden>
+                                            <p>Un-Tagged WAV or MP3</p>
+                                            <span class="format">.WAV (or.MP3)</span>
+                                            <div class="addAudioFile__progress">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-item">
+                                <p class="form-title">URL OF YOUR TRACK</p>
+                                <div class="artwork">
+                                    <input type="file" id="artwork" hidden>
+                                    <label for="artwork" class="artwork-box">
+                                        <img src="./assets/images/artwork.png" alt="" id="artworkImg">
+                                    </label>
+                                    <div class="artwork__info">
+                                        Preferred: 1500x1500px, Minimum: 500x500px<br/>
+                                        <br/>
+                                        Got Photoshop? Make your own using our free template.<br/>
+                                        <a href="" download>
+                                            Download PSD Template.
+                                        </a>
+                                    </div>
+                                    <label for="artwork" class="artwork-upload waves-effect">
+                                        Upload Artwork
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-item">
+                                <p class="form-title">Artwork Dimension</p>
+                                <div class="input">
+                                    <input ype="text" placeholder="" value="https://www.beatstars.com/beat/4377207" />
+                                    <button class="form-copy" type="button">Copy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="registered__section">
+                <div class="wrap">
+                    <h2 class="registered__section-title">Selling Preferences</h2>
+                    <div class="registered__section-content">
+                        <div class="row row--notice">
+                            <div class="registered__notice">
+                                <h2>NOTICE</h2> If you enter a dollar or won, the exchange rate will be reflected automatically.
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div for="" class="form-item">
+                                    <div class="form-title">
+                                        <label for="c1" class="checkbox">
+                                            <input type="checkbox" hidden="" id="c1">
+                                            <span></span> BASIC LEASE LICENSE (MP3 or WAV) PRICE
+                                        </label>
+                                    </div>
+                                    <div class="row row--inner">
+                                        <span class="col">
+                                            <div class="input">
+                                                <input ype="text" placeholder="22,000" />
+                                            </div>
+                                        </span>
+                                        <span class="col">
+                                            <div class="input">
+                                                <input ype="text" placeholder="19.00" />
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="row row--inner">
+                                        <span class="col">
+                                            <p>
+                                                Inventory quantity
+                                            </p>
+                                        </span>
+                                        <span class="col">
+                                            <div class="input">
+                                                <input ype="text" placeholder="0" />
+                                            </div>
+                                        </span>
+                                    </div>
+
+                                    <p class="form-info mt-15">
+                                        ·  Leases licenses for uploaded MP3 or WAV files.<br/>
+                                        <br/>
+                                        ·  The terms of lease are limited to 60 days of service /<br/>
+                                        no arbitrary editing / Rented members cannot be re-rented to others /<br/>
+                                        no other activities not authorized by the platform
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div for="" class="form-item">
+                                    <div class="form-title">
+                                        <label for="c2" class="checkbox">
+                                            <input type="checkbox" hidden="" id="c2">
+                                            <span></span> BASIC LEASE LICENSE (MP3 or WAV) PRICE
+                                        </label>
+                                    </div>
+                                    <div class="row row--inner">
+                                        <span class="col">
+                                            <div class="input">
+                                                <input ype="text" placeholder="22,000" />
+                                            </div>
+                                        </span>
+                                        <span class="col">
+                                            <div class="input">
+                                                <input ype="text" placeholder="19.00" />
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="row row--inner">
+                                        <span class="col">
+                                            <p>
+                                                Inventory quantity
+                                            </p>
+                                        </span>
+                                        <span class="col">
+                                            <div class="input">
+                                                <input ype="text" placeholder="1" readonly />
+                                            </div>
+                                        </span>
+                                    </div>
+
+                                    <p class="form-info mt-15">
+                                        ·  Sell mastering licenses including uploaded MP3 or WAV files and STEMS
+                                        configurations.<br/>
+                                        <br/>
+                                        ·  UNLIMITED
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="registered__section">
+                <div class="wrap">
+                    <h2 class="registered__section-title">Track Details</h2>
+                    <div class="registered__section-content">
+                        <div class="row">
+                            <div class="col">
+                                <label for="" class="form-item">
+                                    <p class="form-title required">PRIMARY GENRE</p>
+                                    <div class="custom-select ">
+                                        <button class="selected-option" type="button">
+                                            All Genre
+                                        </button>
+                                        <div class="options">
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="" class="form-item">
+                                    <p class="form-title ">PRIMARY MOOD</p>
+                                    <div class="custom-select ">
+                                        <button class="selected-option" type="button">
+                                            None
+                                        </button>
+                                        <div class="options">
+                                            <button class="option" data-value="" type="button">
+                                                None
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                None
+                                            </button>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="" class="form-item">
+                                    <p class="form-title required">SUBGENRE</p>
+                                    <div class="custom-select ">
+                                        <button class="selected-option" type="button">
+                                            None
+                                        </button>
+                                        <div class="options">
+                                            <button class="option" data-value="" type="button">
+                                                None
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                None
+                                            </button>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label for="" class="form-item">
+                                    <p class="form-title ">DESCRIPTION</p>
+                                    <div class="input">
+                                        <textarea name="" id="" placeholder="Enter Description"></textarea>
+                                    </div>
+                                </label>
+
+                                <label for="" class="form-item">
+                                    <p class="form-title ">BPM(Beats per minute)</p>
+                                    <div class="input">
+                                        <input ype="text" value="0" />
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="registered__section">
+                <div class="wrap">
+                    <h2 class="registered__section-title">Collaborators</h2>
+                    <div class="registered__section-content">
+                        <div class="">
+                            <div class="collaborators-table">
+                                <table>
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th>COLLABORATOR</th>
+                                        <th>ROLE</th>
+                                        <th>PROFIT SHARE</th>
+                                        <th>PUBLISHING %</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>YOU</td>
+                                        <td>MAIN COLLABORATOR</td>
+                                        <td>100%</td>
+                                        <td>100%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="btnbox">
+                                <button type="button" class="waves-effect">Add collaborator</button>
+                            </div>
+
+                            <div class="collaborators-info">
+                                <h4>Before you add Collaborators, please make sure that you & your Collaborators meet the requirements below:</h4>
+                                <div>
+                                    - You must be the "Primary Contributor" to add Collaborators<br/>
+                                    - Make sure you Follow each other.<br/>
+                                    - Your Collaborator has to be a BeatStars Registered Member and at least subscribed to a "FREE" Subscription Account<br/>
+                                    - Needs to have their PayPal Email Address properly Setup<br/>
+                                    - You can only add up to Five (5) Collaborators per Track
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="registered__section">
+                <div class="wrap">
+                    <h2 class="registered__section-title">Related Videos</h2>
+                    <div class="registered__section-content">
+                        <div class="">
+                            <p class="registered__description">
+                                Only link videos that are related to this Track. Following examples are: Video Promotions or Official Music Video.
+                            </p>
+                            <div class="btnbox">
+                                <button type="button" class="red waves-effect">Add collaborator</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="registered__btnbox">
+                <a href="" class="btn btn--list waves-effect">List</a>
+                <button type="submit" class="btn btn--save waves-effect">Save</button>
+            </div>
+        </form>
+    </div>
+    @@include('./include/footer.html')
+</div>
+<script src="./assets/plugins/jquery.js"></script>
+<script src="./assets/plugins/slick/slick.js"></script>
+<script src="./assets/plugins/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+<script src="./assets/js/build.js"></script>
+</body>
+</html>
+
+
+<script>
+    $('.datepicker').datetimepicker();
+    // https://xdsoft.net/jqplugins/datetimepicker/
+
+    // 파일 추가 모션
+    $('#tags').on('keyup', function(e){
+        $(this).parents('.form-item').find('.form-unit span').text(e.target.value.length);
+
+    });
+    $('.addAudioFile input').on('change', function(){
+        if( this.value ) {
+            console.log(this.value);
+            $(this).parents('.addAudioFile__info').find('.addAudioFile__progress span').animate({
+                width: '100%'
+            }, 500)
+        }
+    });
+
+    $('#artwork').on('change', function(e){
+        var reader = new FileReader();
+        var img = document.querySelector('#artworkImg');
+        reader.onload = e => {
+            img.src = e.target.result;
+        };
+        var f = e.target.files[0];
+        reader.readAsDataURL(f);
+    });
+</script>

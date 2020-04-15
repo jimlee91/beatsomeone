@@ -7,6 +7,7 @@
 
 @import "helpers/mixins";
 
+@import "components/buttnWave";
 @import "components/tab";
 @import "components/button";
 @import "components/playlist";
@@ -21,6 +22,7 @@
 @import "components/commentsbox";
 @import "components/information";
 @import "components/player";
+@import "components/addAudioFile";
 
 @import "layout/container";
 @import "layout/header";
@@ -30,5 +32,6 @@
 @import "pages/main";
 @import "pages/accounts";
 @import "pages/detail";
+@import "pages/registered";
 
 @import "vendors/rangeCustom";
