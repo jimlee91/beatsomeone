@@ -37,7 +37,7 @@
                                 <label for="" class="form-item">
                                     <p class="form-title required">TITLE</p>
                                     <div class="input">
-                                        <input ype="text" placeholder="New TrackAS" />
+                                        <input type="text" placeholder="New TrackAS" />
                                     </div>
                                     <span class="form-info">
                                         9 out of 60 Maximum characters allowed
@@ -47,7 +47,7 @@
                                 <label for="" class="form-item">
                                     <p class="form-title">TAGS (3)</p>
                                     <div class="input">
-                                        <input ype="text" placeholder="Tags (,)Comma Separated" maxlength="25" id="tags"/>
+                                        <input type="text" placeholder="Tags (,)Comma Separated" maxlength="25" id="tags"/>
                                         <span class="form-unit"><span>0</span>/25</span>
                                     </div>
                                 </label>
@@ -80,7 +80,7 @@
                                         <label for="" class="form-item">
                                             <p class="form-title required">RELEASE DATE</p>
                                             <div class="input">
-                                                <input type="text" class="datepicker">
+                                                <input type="text" class="datepicker" readonly>
                                             </div>
                                         </label>
                                     </div>
@@ -161,7 +161,7 @@
                             <div class="form-item">
                                 <p class="form-title">Artwork Dimension</p>
                                 <div class="input">
-                                    <input ype="text" placeholder="" value="https://www.beatstars.com/beat/4377207" />
+                                    <input type="text" placeholder="" readonly value="https://www.beatstars.com/beat/4377207" />
                                     <button class="form-copy" type="button">Copy</button>
                                 </div>
                             </div>
@@ -191,12 +191,12 @@
                                     <div class="row row--inner">
                                         <span class="col">
                                             <div class="input">
-                                                <input ype="text" placeholder="22,000" />
+                                                <input type="number" placeholder="22,000" />
                                             </div>
                                         </span>
                                         <span class="col">
                                             <div class="input">
-                                                <input ype="text" placeholder="19.00" />
+                                                <input type="number" placeholder="19.00" />
                                             </div>
                                         </span>
                                     </div>
@@ -208,7 +208,7 @@
                                         </span>
                                         <span class="col">
                                             <div class="input">
-                                                <input ype="text" placeholder="0" />
+                                                <input type="number" placeholder="0" />
                                             </div>
                                         </span>
                                     </div>
@@ -234,12 +234,12 @@
                                     <div class="row row--inner">
                                         <span class="col">
                                             <div class="input">
-                                                <input ype="text" placeholder="22,000" />
+                                                <input type="number" placeholder="22,000" />
                                             </div>
                                         </span>
                                         <span class="col">
                                             <div class="input">
-                                                <input ype="text" placeholder="19.00" />
+                                                <input type="number" placeholder="19.00" />
                                             </div>
                                         </span>
                                     </div>
@@ -251,7 +251,7 @@
                                         </span>
                                         <span class="col">
                                             <div class="input">
-                                                <input ype="text" placeholder="1" readonly />
+                                                <input type="number" placeholder="1" readonly class="disabled" />
                                             </div>
                                         </span>
                                     </div>
@@ -281,6 +281,54 @@
                                             All Genre
                                         </button>
                                         <div class="options">
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
+                                            <button class="option" data-value="" type="button">
+                                                All Genre
+                                            </button>
                                             <button class="option" data-value="" type="button">
                                                 All Genre
                                             </button>
@@ -334,7 +382,7 @@
                                 <label for="" class="form-item">
                                     <p class="form-title ">BPM(Beats per minute)</p>
                                     <div class="input">
-                                        <input ype="text" value="0" />
+                                        <input type="number" value="0" />
                                     </div>
                                 </label>
                             </div>
@@ -426,6 +474,9 @@
 
 <script>
     $('.datepicker').datetimepicker();
+    $('.datepicker').on('change', function(){
+        this.value && $(this).addClass('active');
+    })
     // https://xdsoft.net/jqplugins/datetimepicker/
 
     // 파일 추가 모션

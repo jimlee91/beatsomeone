@@ -142,7 +142,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="" class="buy">
+                            <a href="" class="buy waves-effect">
                                 <span>$20.00</span>
                             </a>
                         </div>
@@ -164,7 +164,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="" class="buy">
+                            <a href="" class="buy waves-effect">
                                 <span>$20.00</span>
                             </a>
                         </div>
@@ -185,7 +185,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="" class="buy">
+                            <a href="" class="buy waves-effect">
                                 <span>$20.00</span>
                             </a>
                         </div>
@@ -206,7 +206,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="" class="buy">
+                            <a href="" class="buy waves-effect">
                                 <span>$20.00</span>
                             </a>
                         </div>
@@ -227,7 +227,7 @@
                             </div>
                         </div>
                         <div>
-                            <a href="" class="buy">
+                            <a href="" class="buy waves-effect">
                                 <span>$20.00</span>
                             </a>
                         </div>
@@ -250,6 +250,7 @@
 <!-- playlist item 템플릿 문자열 -->
 <script>
     // 추가 부분
+    $('html, body').css('overflow', 'hidden');
     $('.parchase-dropdown button').on('click', function(){
         $(this).toggleClass('active');
         $(this).parents('.parchase-item').find('.parchase-description').toggle();
@@ -261,6 +262,7 @@
     });
     $('.modal__close').on('click', function(){
         $(this).parents('.modal').hide();
+        $('html, body').css('overflow', 'auto');
     })
 </script>
 </body>

@@ -119,6 +119,8 @@
         height: 55px;
       }
       .options {
+        max-height: 400px;
+        overflow: auto;
         top: 55px;
         button {
           height: 40px;
@@ -151,6 +153,12 @@
       }
       .datepicker {
         background: url('../images/icon/calendar.png') #303136 no-repeat calc(100% - 20px) center;
+        &:hover {
+          background: url('../images/icon/calendar-white.png') #303136 no-repeat calc(100% - 20px) center;
+        }
+        &.active {
+          background: url('../images/icon/calendar-white.png') #303136 no-repeat calc(100% - 20px) center;
+        }
       }
       textarea {
         color:#fff;
@@ -175,6 +183,9 @@
         padding:0 20px;
         &:placeholder {
           color:rgba(255,255,255,.3);
+        }
+        &.disabled {
+          background:#242428;
         }
       }
     }
