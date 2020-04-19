@@ -62,15 +62,26 @@ $(function() {
 
   // 커스텀 셀렉트 옵션
   $(".custom-select").on("click", function() {
-    $(this)
-      .siblings(".custom-select")
-      .removeClass("active")
-      .find(".options")
-      .hide();
-    $(this).toggleClass("active");
-    $(this)
-      .find(".options")
-      .toggle();
+    $('.options').hide();
+
+    if( !$(this).hasClass('active') ) {
+      $(this).addClass("active");
+      $(this)
+          .find(".options")
+          .show();
+
+      $(this).find('.options').niceScroll({
+        cursorcolor:"#414349",
+        cursorwidth:"5px",
+        cursorborder: 'none'
+      });
+    } else {
+      $(this).removeClass("active");
+      $(this)
+          .find(".options")
+          .hide();
+    }
+
   });
 });
 // 윈도우 스크롤 했을때,
